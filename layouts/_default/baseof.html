@@ -6,6 +6,7 @@
     <title>{{ .Title }}</title>
 
     <link rel="stylesheet" href="/css/style.css">
+
 </head>
 <body>
 
@@ -15,5 +16,10 @@
         {{ block "main" . }}{{ end }}
     </main>
 
+    {{ partial "footer.html" . }}
+
 </body>
 </html>
+
+
+
