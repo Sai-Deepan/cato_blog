@@ -35,7 +35,12 @@ body {
     text-decoration: none;
     color: #111;
     font-size: 18px;
+    padding: 6px 16px;
     transition: opacity 0.2s ease;
+}
+
+.navbar a.active {
+    background: rgba(0, 0, 0, 0.19);
 }
 
 .navbar a:hover {

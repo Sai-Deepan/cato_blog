@@ -2,7 +2,12 @@
     <ul>
         {{ range .Site.Menus.main }}
         <li>
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a
+                href="{{ .URL }}"
+                class="{{ if or ($.IsMenuCurrent "main" .) (eq $.RelPermalink .URL) }}active{{ end }}"
+            >
+                {{ .Name }}
+            </a>
         </li>
         {{ end }}
     </ul>
