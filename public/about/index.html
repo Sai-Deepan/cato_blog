@@ -6,7 +6,7 @@
     <title>About</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="/js/skills.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -114,7 +114,9 @@
         <br>
         DEEPAN SAI
     </h1>
-    <h3>A.K.A</h3>
+    <h3>
+        A.K.A
+    </h3>
 
     <div class="alias">
         CatoTheYounger
@@ -130,15 +132,47 @@
 
 <section class="skills-section">
 
-<h2>SKILLS</h2>
+    <h2>SKILLS</h2>
 
-<div class="skills-grid">
-    <div class="skill-card"></div>
-    <div class="skill-card"></div>
-    <div class="skill-card"></div>
-    <div class="skill-card"></div>
-</div>
+    <div class="skills-tabs">
 
+        <button class="skill-tab"
+                onclick="showSkill('ethical', this)">
+            ETHICAL<br>HACKING
+        </button>
+
+        <button class="skill-tab"
+                onclick="showSkill('ml', this)">
+            ML<br>RESEARCH
+        </button>
+
+        <button class="skill-tab"
+                onclick="showSkill('quant', this)">
+            QUANTITATIVE<br>FINANCE
+        </button>
+
+        <button class="skill-tab"
+                onclick="showSkill('systems', this)">
+            SYSTEMS<br>ENGINEERING
+        </button>
+
+    </div>
+
+    <div id="ethical" class="skill-panel">
+        Ethical hacking content...
+    </div>
+
+    <div id="ml" class="skill-panel">
+        ML research content...
+    </div>
+
+    <div id="quant" class="skill-panel">
+        Quantitative finance content...
+    </div>
+
+    <div id="systems" class="skill-panel">
+        Systems engineering content...
+    </div>
 
 </section>
 

@@ -235,18 +235,18 @@ body {
 
 .hi {
     font-size: 128px;
-    font-weight: 900;
+    font-weight: 800;
     font-family: "Montserrat", sans-serif;
 }
 
 .im {
     font-size: 93px;
-    font-weight: 400;
+    font-weight: 750;
     color: #999;
-    margin-left: 5px;
     font-family: "Montserrat", sans-serif;
 }
-    .about-right h1 span {
+
+.about-right h1 span {
     color: #aaa;
     font-family: "Montserrat", sans-serif;
 }
@@ -254,7 +254,8 @@ body {
 .about-right h3 {
     color: #aaa;
     font-size: 33px;
-    margin-top: 15px;
+    margin-top: 10px;
+    font-weight: 700;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -271,6 +272,7 @@ body {
     margin-top: 40px;
     font-size: 30px;
     font-family: "Montserrat", sans-serif;
+    font-weight: 700;
 }
 
 .skills-section {
@@ -362,4 +364,42 @@ font-weight: 700;
 cursor: pointer;
 }
 
-`
+/* About Section */
+
+.skills-tabs {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-tab {
+    width: 300px;
+    height: 110px;
+
+    border: none;
+    background: #bdbdbd;
+
+    text-align: left;
+    padding: 20px;
+
+    font-size: 26px;
+    cursor: pointer;
+
+    transition: .2s ease;
+}
+
+.skill-tab.active {
+    background: #cfcfcf;
+    transform: translateY(10px);
+}
+
+.skill-panel {
+    display: none;
+
+    width: 100%;
+    min-height: 400px;
+
+    background: #cfcfcf;
+
+    padding: 30px;
+    margin-top: -1px;
+}
