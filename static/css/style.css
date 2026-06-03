@@ -403,3 +403,62 @@ cursor: pointer;
     padding: 30px;
     margin-top: -1px;
 }
+
+/* Skills Content */
+
+.skill-panel {
+    display: none;
+
+    background: #cfcfcf;
+
+    padding: 25px;
+
+    margin-top: -1px;
+}
+
+.skill-panel.active-panel {
+    display: block;
+}
+
+.skill-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.skill-left {
+    flex: 1;
+}
+
+.skill-right {
+    width: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skill-item {
+    margin-bottom: 25px;
+}
+
+.skill-item h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.skill-item p {
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.tools-strip {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.radar-chart {
+    width: 320px;
+}
