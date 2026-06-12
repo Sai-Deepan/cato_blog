@@ -1,0 +1,21 @@
+<section class="blog-section">
+
+    <div class="section-title">
+
+        <span class="section-number">/01</span>
+
+        <h2>FEATURED WORKS</h2>
+
+    </div>
+
+    <div class="blog-grid">
+
+        {{ range first 8 (where .Site.RegularPages "Params.featured" true) }}
+
+            {{ partial "blog-card.html" . }}
+
+        {{ end }}
+
+    </div>
+
+</section>

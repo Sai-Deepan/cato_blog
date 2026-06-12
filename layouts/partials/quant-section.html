@@ -1,0 +1,21 @@
+<section class="blog-section">
+
+    <div class="section-title">
+
+        <span class="section-number">/03</span>
+
+        <h2>QUANT</h2>
+
+    </div>
+
+    <div class="blog-grid">
+
+        {{ range first 4 (where .Site.RegularPages "Params.category" "quant") }}
+
+            {{ partial "blog-card.html" . }}
+
+        {{ end }}
+
+    </div>
+
+</section>

@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+    {{ partial "featured-section.html" . }}
+
+    {{ partial "recent-section.html" . }}
+
+    {{ partial "quant-section.html" . }}
+
+    {{ partial "learning-section.html" . }}
+
+<section class="newsletter">
+
+    <h2>SUBSCRIBE TO SIGNAL</h2>
+
+    <p>
+        UPDATES ON LATEST TECHNOLOGY, CVEs AND EXPERIMENTS<br>
+        STRAIGHT TO YOUR MAIL BOX
+    </p>
+
+    <form class="newsletter-form">
+
+        <input
+            type="email"
+            placeholder="ENTER MAIL"
+            required>
+
+        <button type="submit">
+            SUBSCRIBE
+            <span>↗</span>
+        </button>
+
+    </form>
+
+</section>
+
+{{ end }}
