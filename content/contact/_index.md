@@ -1,3 +1,4 @@
 ---
-title: "Research"
+title: "Contact"
+layout: "contact"
 ---
