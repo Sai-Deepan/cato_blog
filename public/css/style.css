@@ -915,3 +915,154 @@ textarea {
 .submit-btn:hover {
     transform: translateY(-2px);
 }
+
+/* ARTICLES PAGE */
+
+.articles-page {
+    width: 92%;
+    margin: 30px auto 100px;
+}
+
+/* SEARCH */
+
+.search-wrapper {
+    margin-bottom: 20px;
+}
+
+.search-wrapper input {
+    width: 100%;
+    height: 40px;
+
+    border: 2px solid #111;
+    background: transparent;
+
+    padding: 0 20px;
+
+    font-size: 22px;
+    font-family: "JetBrainsMono";
+}
+
+/* FILTER TAGS */
+
+.tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 60px;
+}
+
+.tag-filter span,
+.tags span,
+.time {
+    background: #f5b126;
+
+    padding: 8px 14px;
+
+    border-radius: 12px;
+
+    font-size: 14px;
+}
+
+/* SECTION */
+
+.article-section {
+    margin-bottom: 90px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+.section-number {
+    color: #f5b126;
+
+    font-size: 60px;
+    font-weight: 800;
+}
+
+.section-heading h2 {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* GRID */
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* CARD */
+
+.article-card {
+    padding-right: 20px;
+
+    border-right: 1px solid rgba(0,0,0,.25);
+
+    transition: .25s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+}
+
+.article-image {
+    height: 260px;
+
+    background: #a4a4a4;
+
+    border-radius: 14px;
+
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+.rank {
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+
+    color: white;
+
+    font-size: 70px;
+    font-weight: 900;
+
+    transform: rotate(-20deg);
+}
+
+/* TEXT */
+
+.article-card h3 {
+    font-size: 30px;
+    font-weight: 900;
+
+    margin-bottom: 10px;
+}
+
+.article-card p {
+    font-size: 22px;
+    line-height: 1.5;
+
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+}
