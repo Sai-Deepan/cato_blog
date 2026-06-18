@@ -10,7 +10,7 @@
 
     <div class="blog-grid">
 
-        {{ range first 4 (where .Site.RegularPages "Params.category" "quant") }}
+        {{ range first 4 (where (where .Site.RegularPages "Section" "blog") "Params.category" "quant") }}
 
             {{ partial "blog-card.html" . }}
 

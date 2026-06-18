@@ -8,9 +8,19 @@
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
   </url><url>
+    <loc>http://localhost:1313/articles/freebsd-networking/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/hacking/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/network/</loc>
+  </url><url>
+    <loc>http://localhost:1313/articles/nmap-scan/</loc>
+  </url><url>
     <loc>http://localhost:1313/blog/learning/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/quant/</loc>
+  </url><url>
+    <loc>http://localhost:1313/articles/quant-trading/</loc>
   </url><url>
     <loc>http://localhost:1313/articles/</loc>
   </url><url>
@@ -25,6 +35,8 @@
     <loc>http://localhost:1313/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/articles/wireshark/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/test/</loc>
   </url>

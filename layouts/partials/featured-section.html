@@ -10,7 +10,7 @@
 
     <div class="blog-grid">
 
-        {{ range first 8 (where .Site.RegularPages "Params.featured" true) }}
+        {{ range first 8 (where (where .Site.RegularPages "Section" "blog") "Params.featured" true) }}
 
             {{ partial "blog-card.html" . }}
 

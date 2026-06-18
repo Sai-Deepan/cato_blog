@@ -135,6 +135,10 @@ body {
 /* Terminal Section */
 
 .terminal-window {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all .25s ease;
     position: absolute;
     bottom: 140px;
     right: 40px;
@@ -164,6 +168,13 @@ body {
     text-align: center;
 
     font-weight: bold;
+}
+
+.terminal-window.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
 }
 
 #terminal-output {
@@ -1012,8 +1023,23 @@ textarea {
     transform: translateY(-4px);
 }
 
+.article-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.article-card a:visited {
+    color: inherit;
+}
+
+.article-card a:hover {
+    color: inherit;
+}
+
 .article-image {
     height: 260px;
+    width: 470px;
 
     background: #a4a4a4;
 
@@ -1065,4 +1091,62 @@ textarea {
 .tags {
     display: flex;
     gap: 10px;
+}
+
+/* Main Page */
+
+.hero {
+    position: relative;
+    min-height: 90vh;
+}
+
+.hero-statue {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+
+    height: 65vh;
+}
+
+.hero-text {
+    position: absolute;
+
+    left: 8%;
+    top: 30%;
+}
+
+
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    position: absolute;
+
+    top: 30px;
+    right: 5%;
+
+    z-index: 100;
+
+    background: #f5b126;
+    color: #111;
+
+    text-decoration: none;
+
+    padding: 14px 28px;
+
+    font-family: "JetBrainsMono";
+    font-size: 18px;
+
+    transition: .2s ease;
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
+}
+
+.resume-btn span {
+    font-size: 20px;
+    font-weight: 700;
 }

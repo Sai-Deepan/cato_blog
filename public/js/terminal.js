@@ -1,5 +1,28 @@
+const terminal = document.querySelector(".terminal-window");
 const input = document.getElementById("terminal-input");
 const output = document.getElementById("terminal-output");
+
+/* Open terminal with / */
+document.addEventListener("keydown", function (e) {
+
+    const tag = document.activeElement.tagName;
+
+    if (tag === "INPUT" || tag === "TEXTAREA") return;
+
+    if (e.key === "/") {
+
+        e.preventDefault();
+
+        terminal.classList.add("active");
+
+        input.focus();
+    }
+
+    if (e.key === "Escape") {
+
+        terminal.classList.remove("active");
+    }
+});
 
 const commands = {
 

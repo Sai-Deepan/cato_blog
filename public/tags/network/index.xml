@@ -1,19 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Research Site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Research Site</description>
+    <title>NETWORK on Research Site</title>
+    <link>http://localhost:1313/tags/network/</link>
+    <description>Recent content in NETWORK on Research Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description></description>
-    </item>
+    <atom:link href="http://localhost:1313/tags/network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FreeBSD Networking</title>
       <link>http://localhost:1313/articles/freebsd-networking/</link>
@@ -29,20 +22,6 @@
       <description></description>
     </item>
     <item>
-      <title>NMAP Scan</title>
-      <link>http://localhost:1313/blog/learning/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/learning/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Portfolio Optimization</title>
-      <link>http://localhost:1313/blog/quant/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/quant/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Quant Trading</title>
       <link>http://localhost:1313/articles/quant-trading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -54,13 +33,6 @@
       <link>http://localhost:1313/articles/wireshark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/articles/wireshark/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>WIRE_SHARK</title>
-      <link>http://localhost:1313/blog/test/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/blog/test/</guid>
       <description></description>
     </item>
   </channel>
