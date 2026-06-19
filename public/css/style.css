@@ -1152,3 +1152,142 @@ textarea {
     font-size: 20px;
     font-weight: 700;
 }
+
+/* Projects Section */
+
+.projects-section {
+    width: 95%;
+    margin: 120px auto;
+}
+
+.project-viewer {
+    background: rgba(255,255,255,.45);
+
+    min-height: 500px;
+
+    padding: 50px;
+
+    margin-bottom: 0;
+}
+
+.project-content {
+    display: none;
+
+    grid-template-columns: 1fr 500px;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.project-content.active {
+    display: grid;
+}
+
+.project-info h2 {
+    font-size: 64px;
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.project-tagline {
+    font-size: 22px;
+
+    margin-bottom: 40px;
+
+    max-width: 700px;
+}
+
+.project-meta {
+    display: flex;
+
+    gap: 50px;
+
+    margin-bottom: 40px;
+}
+
+.project-meta h4 {
+    font-size: 14px;
+
+    color: #666;
+
+    margin-bottom: 8px;
+}
+
+.project-links {
+    display: flex;
+
+    gap: 20px;
+}
+
+.project-links a {
+    text-decoration: none;
+
+    color: #111;
+
+    border: 2px solid #111;
+
+    padding: 12px 24px;
+}
+
+.project-image img {
+    width: 100%;
+
+    border-radius: 8px;
+}
+
+.project-selector {
+    display: flex;
+
+    height: 170px;
+}
+
+.project-shape {
+    flex: 1;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: .25s ease;
+
+    clip-path: polygon(
+        18% 0,
+        100% 0,
+        100% 92%,
+        92% 100%,
+        0 100%,
+        0 45%
+    );
+}
+
+.project-shape:nth-child(1) { background:#efefef; }
+.project-shape:nth-child(2) { background:#dddddd; }
+.project-shape:nth-child(3) { background:#cfcfcf; }
+.project-shape:nth-child(4) { background:#bbbbbb; }
+.project-shape:nth-child(5) { background:#999999; }
+.project-shape:nth-child(6) { background:#777777; }
+.project-shape:nth-child(7) { background:#555555; }
+.project-shape:nth-child(8) { background:#222222; }
+
+.project-shape:hover {
+    transform: translateY(-10px);
+}
+
+.project-shape.active {
+    background: #f5b126 !important;
+
+    transform: translateY(-18px);
+}
+
+.projects-wrapper {
+    width: 92%;
+    margin: 140px auto;
+}
+
+.projects-wrapper h2 {
+    font-size: 39px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
