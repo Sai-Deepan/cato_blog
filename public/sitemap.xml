@@ -8,6 +8,8 @@
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
   </url><url>
+    <loc>http://localhost:1313/exploits/</loc>
+  </url><url>
     <loc>http://localhost:1313/articles/freebsd-networking/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/hacking/</loc>
@@ -27,8 +29,6 @@
     <loc>http://localhost:1313/blog/</loc>
   </url><url>
     <loc>http://localhost:1313/cves/</loc>
-  </url><url>
-    <loc>http://localhost:1313/exploits/</loc>
   </url><url>
     <loc>http://localhost:1313/research/</loc>
   </url><url>
