@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hacking on Research Site</title>
+    <title>HACKING on Research Site</title>
     <link>http://localhost:1313/tags/hacking/</link>
-    <description>Recent content in Hacking on Research Site</description>
+    <description>Recent content in HACKING on Research Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tags/hacking/index.xml" rel="self" type="application/rss+xml" />

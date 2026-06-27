@@ -1156,7 +1156,7 @@ textarea {
 .project-viewer {
     background: rgba(255,255,255,.45);
 
-    min-height: 500px;
+    min-height: 600px;
 
     padding: 50px;
 
@@ -1250,21 +1250,25 @@ textarea {
 
 .project-selector {
     display: flex;
-    height: 200px;
-
+    height: 260px;
     overflow: hidden;
+    align-items: flex-end;
+    margin-top:-120px;
 }
 
 .project-shape {
     flex: 1;
-
+    height: 200px;
     margin-right: -60px;
-
+    position:relative;
     border: none;
 
     cursor: pointer;
 
-    transition: .25s ease;
+    transition:
+    height .35s ease,
+    background .35s ease,
+    box-shadow .35s ease;
 
     clip-path: polygon(
     25% 0,
@@ -1274,7 +1278,6 @@ textarea {
     0 100%,
     0 38%
 );
-
 
 }
 
@@ -1288,17 +1291,53 @@ textarea {
 .project-shape:nth-child(8) { background:#222222; }
 
 .project-shape:hover {
-    transform: translateY(-10px);
+    height: 230px;
+}
+
+.project-shape::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-40px;
+
+    left:0;
+
+    width:100%;
+
+    height:40px;
+
+    background:inherit;
+
+    clip-path:polygon(
+        25% 100%,
+        100% 100%,
+        75% 0,
+        0 0
+    );
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.project-shape:hover::before,
+.project-shape.active::before{
+
+    opacity:1;
+
 }
 
 .project-shape.active {
     background: #f5b126 !important;
-
+    height: 230px;
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.15),
         0 10px 30px rgba(245,177,38,.15);
 
-    z-index: 2;
+    z-index: 0;
 }
 
 .projects-wrapper {
@@ -1405,4 +1444,105 @@ textarea {
     background: rgba(255,255,255,.8);
 
     backdrop-filter: blur(10px);
+}
+
+/* Hero Transition */
+
+.hero-transition {
+
+    height: 200vh;
+
+}
+
+.hero-statue {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 450px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.18);
+
+    transform-origin: center center;
+
+    z-index: 30;
+
+}
+
+.hero-sticky {
+
+    position: sticky;
+    top: 0;
+
+    height: 100vh;
+
+    overflow: hidden;
+
+}
+
+.yellow-layer {
+
+    position: absolute;
+    inset: 0;
+
+    background: #dca82f;
+
+    z-index: 10;
+
+}
+
+.polygon {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 250px;
+    height: 180px;
+
+    transform: translate(-50%, -50%);
+
+    border: 4px solid black;
+
+    clip-path: polygon(
+        0 20%,
+        65% 20%,
+        100% 50%,
+        75% 85%,
+        25% 85%,
+        0 50%
+    );
+
+    z-index: 20;
+
+}
+
+.statue {
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+
+    transform: translate(-50%, -50%)
+                scale(.5);;
+
+    z-index: 30;
+}
+
+.site-content {
+
+    position: relative;
+
+    opacity: 0;
+
+    z-index: 1;
+
 }

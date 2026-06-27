@@ -1,44 +1,68 @@
 {{ define "main" }}
+<section class="hero-transition">
 
-<section class="hero">
+    <div class="hero-sticky">
+
+        <div class="yellow-layer"></div>
+
+        <div class="polygon"></div>
+
+        <img
+            src="/images/main.png"
+            class="hero-statue"
+            alt="Cato">
+
+    </div>
+
+</section>
+
+<section class="site-content">
+
+    <section class="hero">
 
         <a href="/resume.pdf" class="resume-btn">
             RESUME ↗
         </a>
 
-    <img
-        src="/images/main.png"
-        alt="Cato"
-        class="hero-statue">
+        <div class="terminal-window">
 
-    <div class="terminal-window">
-
-        <div class="terminal-header">
-            ~:bash>console
-        </div>
-
-        <div id="terminal-output">
-
-            <div class="line">
-                <span class="prompt">root@root:~$</span> neofetch
+            <div class="terminal-header">
+                ~:bash>console
             </div>
 
-            <div class="line">
-                Welcome to Deepan Sai's research terminal.
+            <div id="terminal-output">
+
+                <div class="line">
+                    <span class="prompt">root@root:~$</span>
+                    neofetch
+                </div>
+
+                <div class="line">
+                    Welcome to Deepan Sai's research terminal.
+                </div>
+
+                <div class="line">
+                    Type <b>help</b> to get started.
+                </div>
+
             </div>
 
-            <div class="line">
-                Type <b>help</b> to get started.
+            <div class="terminal-input-row">
+
+                <span class="prompt">
+                    root@root:~$
+                </span>
+
+                <input
+                    id="terminal-input"
+                    type="text"
+                    autofocus>
+
             </div>
 
         </div>
 
-        <div class="terminal-input-row">
-            <span class="prompt">root@root:~$</span>
-            <input id="terminal-input" type="text" autofocus>
-        </div>
-
-    </div>
+    </section>
 
 </section>
 
