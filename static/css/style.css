@@ -951,16 +951,21 @@ textarea {
 /* FILTER TAGS */
 
 .tag-filter {
+
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 12px;
 
     margin-bottom: 60px;
+
 }
 
 .tag-filter span,
 .tags span,
 .time {
+
     background: #f5b126;
 
     padding: 8px 14px;
@@ -968,6 +973,26 @@ textarea {
     border-radius: 12px;
 
     font-size: 14px;
+
+}
+
+.tag-filter span {
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        color .25s ease,
+        transform .25s ease;
+
+}
+
+.tag-filter span.active {
+
+    background: #111;
+
+    color: #fff;
+
 }
 
 /* SECTION */

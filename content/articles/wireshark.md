@@ -3,8 +3,9 @@ title: "Wire Shark"
 description: "Network packet analysis"
 category: "hacking"
 tags:
-  - Hacking
-  - Network
+  - HACKING
+  - NETWORK
+  - AI/ML
 featured: true
 time: "25min"
 image: "/images/articles/wireshark.jpg"

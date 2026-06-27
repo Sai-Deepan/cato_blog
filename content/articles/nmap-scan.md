@@ -7,5 +7,5 @@ image: "/images/articles/wireshark.jpg"
 
 tags:
   - HACKING
-  - NETWORK
+  - AI/ML
 ---

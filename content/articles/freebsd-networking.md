@@ -6,6 +6,5 @@ time: "25min"
 image: "/images/articles/wireshark.jpg"
 
 tags:
-  - HACKING
   - NETWORK
 ---

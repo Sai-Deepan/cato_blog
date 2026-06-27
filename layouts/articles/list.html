@@ -15,10 +15,12 @@
 
 <div class="tag-filter">
 
-    {{ $tags := slice "HACKING" "QUANT" "NETWORK" "AI/ML" "REVERSING" "LINUX" "BSD" "LLMS" "TRADING" }}
+    <span class="active" data-tag="all">ALL</span>
 
-    {{ range $tags }}
-        <span>{{ . }}</span>
+    {{ range .Site.Taxonomies.tags.ByCount }}
+        <span data-tag="{{ .Name }}">
+            {{ upper .Name }}
+        </span>
     {{ end }}
 
 </div>
@@ -99,11 +101,11 @@
         <h2>ALL ARTICLES</h2>
     </div>
 
-    <div class="articles-grid">
+    <div class="articles-grid" >
 
         {{ range .Pages }}
 
-        <article class="article-card">
+        <article class="article-card" data-tags="{{ delimit .Params.tags "," }}">
 
             <a href="{{ .RelPermalink }}">
 

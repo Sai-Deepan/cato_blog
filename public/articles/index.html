@@ -10,6 +10,7 @@
     <script src="/js/search.js"></script>
     <script src="/js/projects.js"></script>
     <script src="/js/glitch.js"></script>
+    <script src="/js/articles-filter.js"></script>
 
     
     <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
@@ -120,26 +121,20 @@
 
 <div class="tag-filter">
 
-    
+    <span class="active" data-tag="all">ALL</span>
 
     
-        <span>HACKING</span>
+        <span data-tag="network">
+            NETWORK
+        </span>
     
-        <span>QUANT</span>
+        <span data-tag="hacking">
+            HACKING
+        </span>
     
-        <span>NETWORK</span>
-    
-        <span>AI/ML</span>
-    
-        <span>REVERSING</span>
-    
-        <span>LINUX</span>
-    
-        <span>BSD</span>
-    
-        <span>LLMS</span>
-    
-        <span>TRADING</span>
+        <span data-tag="ai/ml">
+            AI/ML
+        </span>
     
 
 </div>
@@ -192,8 +187,6 @@
                     <div class="tags">
 
                         
-                            <span>HACKING</span>
-                        
                             <span>NETWORK</span>
                         
 
@@ -245,6 +238,8 @@
                             <span>HACKING</span>
                         
                             <span>NETWORK</span>
+                        
+                            <span>AI/ML</span>
                         
 
                     </div>
@@ -342,9 +337,11 @@
                     <div class="tags">
 
                         
-                            <span>Hacking</span>
+                            <span>HACKING</span>
                         
-                            <span>Network</span>
+                            <span>NETWORK</span>
+                        
+                            <span>AI/ML</span>
                         
 
                     </div>
@@ -372,11 +369,11 @@
         <h2>ALL ARTICLES</h2>
     </div>
 
-    <div class="articles-grid">
+    <div class="articles-grid" >
 
         
 
-        <article class="article-card">
+        <article class="article-card" data-tags="NETWORK">
 
             <a href="/articles/freebsd-networking/">
 
@@ -405,8 +402,6 @@
                     <div class="tags">
 
                         
-                            <span>HACKING</span>
-                        
                             <span>NETWORK</span>
                         
 
@@ -420,7 +415,7 @@
 
         
 
-        <article class="article-card">
+        <article class="article-card" data-tags="HACKING,NETWORK,AI/ML">
 
             <a href="/articles/nmap-scan/">
 
@@ -453,6 +448,8 @@
                         
                             <span>NETWORK</span>
                         
+                            <span>AI/ML</span>
+                        
 
                     </div>
 
@@ -464,7 +461,7 @@
 
         
 
-        <article class="article-card">
+        <article class="article-card" data-tags="HACKING,NETWORK">
 
             <a href="/articles/quant-trading/">
 
@@ -508,7 +505,7 @@
 
         
 
-        <article class="article-card">
+        <article class="article-card" data-tags="HACKING,NETWORK,AI/ML">
 
             <a href="/articles/wireshark/">
 
@@ -537,9 +534,11 @@
                     <div class="tags">
 
                         
-                            <span>Hacking</span>
+                            <span>HACKING</span>
                         
-                            <span>Network</span>
+                            <span>NETWORK</span>
+                        
+                            <span>AI/ML</span>
                         
 
                     </div>
