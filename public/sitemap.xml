@@ -2,13 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/experience/freebsd-org/</loc>
+  </url><url>
+    <loc>http://localhost:1313/experience/openai/</loc>
+  </url><url>
     <loc>http://localhost:1313/about/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/ai/ml/</loc>
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
     <loc>http://localhost:1313/contact/</loc>
   </url><url>
+    <loc>http://localhost:1313/experience/</loc>
+  </url><url>
     <loc>http://localhost:1313/exploits/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/finance/</loc>
   </url><url>
     <loc>http://localhost:1313/articles/freebsd-networking/</loc>
   </url><url>
@@ -21,6 +31,8 @@
     <loc>http://localhost:1313/blog/learning/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/quant/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/quant/</loc>
   </url><url>
     <loc>http://localhost:1313/articles/quant-trading/</loc>
   </url><url>
@@ -35,6 +47,8 @@
     <loc>http://localhost:1313/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/trading/</loc>
   </url><url>
     <loc>http://localhost:1313/articles/wireshark/</loc>
   </url><url>

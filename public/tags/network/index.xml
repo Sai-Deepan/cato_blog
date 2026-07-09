@@ -15,20 +15,6 @@
       <description></description>
     </item>
     <item>
-      <title>Nmap Scan</title>
-      <link>http://localhost:1313/articles/nmap-scan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/nmap-scan/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Quant Trading</title>
-      <link>http://localhost:1313/articles/quant-trading/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/articles/quant-trading/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Wire Shark</title>
       <link>http://localhost:1313/articles/wireshark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
