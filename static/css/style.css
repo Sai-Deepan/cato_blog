@@ -342,6 +342,7 @@ font-weight: 700;
 }
 
 .slash {
+color: #ffb526;
 font-size: 100px;
 }
 
@@ -1764,4 +1765,42 @@ textarea {
     color:#c9c9c9;
     line-height:1;
     font-family:Arial, sans-serif;
+}
+
+/* Loading Page */
+
+#loader{
+
+    position: fixed;
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background: #f5b126;
+    padding-bottom: 40px;
+
+    overflow: hidden;
+
+    opacity: 1;
+
+}
+
+.loader-logo{
+    margin-bottom: 18px;
+    color: #282C20;
+
+    opacity: 1;
+
+    font-family: "Mona Sans Variable", Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    font-variation-settings: "wdth" 86;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -0.01em;
+
 }
