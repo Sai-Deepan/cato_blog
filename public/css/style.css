@@ -315,10 +315,46 @@ display: flex;
 justify-content: space-between;
 }
 
-.skill-card {
-width: 280px;
-height: 120px;
-background: #bfbfbf;
+.skill-card{
+
+    flex:1;
+
+    height:72px;
+
+    background:#d8dee6;
+
+    clip-path:polygon(12% 0%,100% 0%,88% 100%,0% 100%);
+
+    display:flex;
+    align-items:center;
+
+    padding-left:55px;
+
+    transition:.3s ease;
+
+    cursor:pointer;
+
+}
+
+.skill-card h3{
+
+    font-size:22px;
+    font-weight:500;
+    line-height:1.45;
+
+    color:#1f1f1f;
+
+    margin:0;
+
+    text-transform:uppercase;
+
+}
+
+.skill-card:hover{
+
+    background:#f5b126;
+    transform:translateY(-4px);
+
 }
 
 .stats-section {
@@ -478,21 +514,44 @@ font-size: 100px;
     justify-content: space-between;
 }
 
-.skill-tab {
-    width: 300px;
-    height: 110px;
+.skill-tab{
 
-    border: none;
-    background: #bdbdbd;
-
+    flex:1;
     text-align: left;
-    padding: 20px;
+    height:80px;
 
-    font-size: 26px;
-    cursor: pointer;
+    border:none;
 
-    transition: .2s ease;
+    background:#d8dee6;
+
+    clip-path:polygon(12% 0%,100% 0%,88% 100%,0% 100%);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    padding-left:55px;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:22px;
+
+    font-weight:500;
+
+    line-height:1.35;
+
+    text-transform:uppercase;
+
+    color:#1f1f1f;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
 }
+
 
 .skill-tab.active {
     background: #cfcfcf;
@@ -512,16 +571,6 @@ font-size: 100px;
 }
 
 /* Skills Content */
-
-.skill-panel {
-    display: none;
-
-    background: #cfcfcf;
-
-    padding: 25px;
-
-    margin-top: -1px;
-}
 
 .skill-panel.active-panel {
     display: block;
@@ -1199,41 +1248,6 @@ textarea {
     top: 30%;
 }
 
-
-.resume-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-
-    position: absolute;
-
-    top: 30px;
-    right: 5%;
-
-    z-index: 100;
-
-    background: #f5b126;
-    color: #111;
-
-    text-decoration: none;
-
-    padding: 14px 28px;
-
-    font-family: "JetBrainsMono";
-    font-size: 18px;
-
-    transition: .2s ease;
-}
-
-.resume-btn:hover {
-    transform: translateY(-2px);
-}
-
-.resume-btn span {
-    font-size: 20px;
-    font-weight: 700;
-}
-
 /* Projects Section */
 
 .projects-section {
@@ -1628,9 +1642,6 @@ textarea {
 .site-content {
 
     position: relative;
-
-    opacity: 0;
-
     z-index: 1;
 
 }
@@ -1802,5 +1813,128 @@ textarea {
     text-transform: uppercase;
     line-height: 1;
     letter-spacing: -0.01em;
+
+}
+
+/* Hero Page Resume and Menu Button */
+
+.hero-nav{
+
+    position: fixed;
+
+    top: 75px;
+    right: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    z-index: 10000;
+
+}
+
+.resume-btn{
+
+    background:#f5b126;
+
+    color:#111;
+
+    text-decoration:none;
+
+    padding:14px 22px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    font-family:"Mona Sans Variable", Arial, sans-serif;
+
+    font-weight:700;
+
+    letter-spacing:.04em;
+
+    transition:.3s;
+
+}
+
+.resume-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.menu-btn{
+
+    position: relative;
+
+    width:58px;
+    height:58px;
+
+    border:2px solid #444;
+    border-radius:16px;
+
+    background:#ffffff;
+
+    overflow:hidden;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:7px;
+
+    cursor:pointer;
+
+}
+
+/* Yellow fill */
+
+.menu-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background: #f5b126;
+
+    transform:scaleX(0);
+    transform-origin:left;
+
+    transition:transform .55s cubic-bezier(.22,1,.36,1);
+
+    z-index:0;
+
+}
+
+/* Fill on hover */
+
+.menu-btn:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+/* Menu lines */
+
+.menu-btn span{
+
+    position:relative;
+
+    width:22px;
+    height:2px;
+
+    background:#333;
+
+    z-index:1;
+
+    transition:background .3s;
+
+}
+
+.menu-btn:hover span{
+
+    background:#222;
 
 }
