@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput =
         document.getElementById("articleSearch");
 
+    if (!searchInput) return;
+
     const cards =
         document.querySelectorAll(".article-card");
 

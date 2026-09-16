@@ -1,4 +1,6 @@
 ---
+cms_entry: true
+draft: false
 title: "Quant Trading"
 description: "Learn packet inspection and protocol analysis."
 featured: true

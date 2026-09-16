@@ -1,19 +1,39 @@
-/* Main headings */
+/* Local variable fonts: consistent typography without external requests. */
 @font-face {
-    font-family: "Montserrat-Bold";
-    src: url("/fonts/Montserrat-Bold.ttf");
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
 }
 
-/* Body text */
 @font-face {
-    font-family: "Inter";
-    src: url("/fonts/Inter-Regular.ttf");
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
 }
 
-/* Terminal */
 @font-face {
-    font-family: "JetBrainsMono";
-    src: url("/fonts/JetBrainsMono-Regular.ttf");
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("/fonts/JetBrainsMono-Italic-VariableFont_wght.ttf") format("truetype");
+    font-style: italic;
+    font-weight: 100 800;
+    font-display: swap;
+}
+
+:root {
+    --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 }
 
 * {
@@ -23,7 +43,8 @@
 }
 
 body {
-    font-family: Georgia, serif;
+    font-family: var(--font-sans);
+    line-height: 1.5;
     background-color: #f5f5f5;
 
     /* background-image: url('/images/bg.png'); */
@@ -33,6 +54,19 @@ body {
 
     color: #111;
     min-height: 100vh;
+}
+
+/* Controls follow their section; technical content retains a monospace face. */
+button, input, textarea, select {
+    font: inherit;
+}
+
+code, pre, kbd, samp {
+    font-family: var(--font-mono);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.15;
 }
 
 /* NAVBAR */
@@ -142,7 +176,7 @@ body {
     position: absolute;
     bottom: 140px;
     right: 40px;
-    font-family: "JetBrainsMono", Serif;
+    font-family: var(--font-mono);
     font-size: 13px;
     width: 500px;
     height: 320px;
@@ -211,7 +245,7 @@ body {
 
     outline: none;
 
-    font-family: "JetBrainsMono", Serif;
+    font-family: var(--font-mono);
     font-size: 13px;
 }
 
@@ -219,7 +253,7 @@ body {
 
 .about-hero {
     width: 92%;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
     margin: 60px auto;
     display: flex;
     gap: 60px;
@@ -235,26 +269,26 @@ body {
     font-size: 124px;
     line-height: 0.9;
     font-weight: 700;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .hi {
     font-size: 128px;
     font-weight: 750;
     color: #000000;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .im {
     font-size: 93px;
     font-weight: 750;
     color: rgba(255, 181, 38, 0.49);
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 
 .about-right h1 span {
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .about-right h3 {
@@ -262,7 +296,7 @@ body {
     font-size: 33px;
     margin-top: 10px;
     font-weight: 700;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .alias {
@@ -270,13 +304,13 @@ body {
     font-size: 41px;
     color: #ffb526;  /*ffad00*/
     font-weight: 700;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .about-right h2 {
     margin-top: 40px;
     font-size: 30px;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
     font-weight: 700;
 }
 
@@ -284,7 +318,7 @@ body {
     width: 85%;;
     margin: 0 auto;
 
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
     font-size: 24px;
 
     line-height: 1.8;
@@ -300,14 +334,14 @@ body {
 .skills-section {
     width: 90%;
     margin: 80px auto;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .skills-section h2,
 .experience-section h2 {
     font-size: 39px;
     margin-bottom: 40px;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
 }
 
 .skills-grid {
@@ -384,7 +418,7 @@ font-size: 100px;
 
 .experience-section{
     padding: 60px 40px;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
 }
 
 .experience-section h2{
@@ -426,7 +460,7 @@ font-size: 100px;
     background:transparent;
     text-decoration:none;
     color:inherit;
-    font-family: Arial, sans-serif;   /* explicitly override any inherited serif */
+    font-family: var(--font-sans);
     transition:background .2s ease, transform .2s ease;
 }
 
@@ -440,7 +474,7 @@ font-size: 100px;
     font-size:16px;
     font-weight:700;
     color:#1a1a1a;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
 }
 
 .experience-card--featured h3{
@@ -451,7 +485,7 @@ font-size: 100px;
     margin:0;
     font-size:14px;
     color:#333;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-sans);
 }
 
 .experience-arrow{
@@ -488,7 +522,7 @@ font-size: 100px;
 
     color: #111;
 
-    font-family: "JetBrainsMono", monospace;
+    font-family: var(--font-mono);
     font-size: 28px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -534,7 +568,7 @@ font-size: 100px;
 
     padding-left:55px;
 
-    font-family:"Montserrat",sans-serif;
+    font-family: var(--font-sans);
 
     font-size:22px;
 
@@ -625,7 +659,7 @@ font-size: 100px;
     background: #050505;
     color: #d4d4d4;
     padding-top: 70px;
-    font-family: "JetBrains Mono", monospace;
+    font-family: var(--font-mono);
 }
 
 .footer-grid {
@@ -752,20 +786,21 @@ font-size: 100px;
     display: flex;
     align-items: center;
     gap: 20px;
-
+    font-family: var(--font-mono);
     margin-bottom: 30px;
 }
 
 .section-number {
     color: #f5ab1e;
-
-    font-size: 42px;
+    font-family: var(--font-mono);
+    font-size: 30px;
     font-weight: 700;
 }
 
 .section-title h2 {
     font-size: 42px;
     font-weight: 700;
+    font-family: var(--font-mono);
 }
 
 .blog-grid {
@@ -849,7 +884,7 @@ font-size: 100px;
 .newsletter h2 {
     font-weight: 700;
     margin-bottom: 20px;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-sans);
     font-size: 34px;
 }
 
@@ -858,7 +893,7 @@ font-size: 100px;
 
     margin-bottom: 40px;
     color: #222;
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-sans);
     font-size: 18px;
 }
 
@@ -881,7 +916,7 @@ font-size: 100px;
     padding: 0 20px;
 
     font-size: 32px;
-    font-family: "JetBrainsMono", monospace;
+    font-family: var(--font-mono);
 
     outline: none;
 }
@@ -940,7 +975,7 @@ font-size: 100px;
 }
 
 .lets {
-    font-family: "Montserrat-Bold";
+    font-family: var(--font-sans);
     font-size: 110px;
     font-weight: 900;
 
@@ -950,7 +985,7 @@ font-size: 100px;
 .talk {
     margin-left: 220px;
 
-    font-family: "Montserrat-Bold";
+    font-family: var(--font-sans);
     font-size: 110px;
     font-weight: 900;
 
@@ -962,7 +997,7 @@ font-size: 100px;
 }
 
 .contact-right h3 {
-    font-family: "Montserrat-Bold";
+    font-family: var(--font-sans);
     font-size: 26px;
     margin-bottom: 15px;
 }
@@ -989,7 +1024,7 @@ textarea {
 
     outline: none;
 
-    font-family: "JetBrainsMono";
+    font-family: var(--font-mono);
     font-size: 22px;
 
     color: #111;
@@ -1016,7 +1051,7 @@ textarea {
 
     cursor: pointer;
 
-    font-family: "JetBrainsMono";
+    font-family: var(--font-mono);
     font-size: 24px;
 }
 
@@ -1057,7 +1092,7 @@ textarea {
     padding: 0 20px;
 
     font-size: 22px;
-    font-family: "JetBrainsMono";
+    font-family: var(--font-mono);
 }
 
 /* FILTER TAGS */
@@ -1123,8 +1158,8 @@ textarea {
 
 .section-number {
     color: #f5b126;
-
-    font-size: 60px;
+    font-family: var(--font-mono);
+    font-size: 45px;
     font-weight: 800;
 }
 
@@ -1256,6 +1291,7 @@ textarea {
 }
 
 .project-viewer {
+    display: grid;
     background: rgba(255,255,255,.45);
 
     min-height: 600px;
@@ -1266,35 +1302,28 @@ textarea {
 }
 
 .project-content {
-    display: none;
+    display: grid;
+    grid-area: 1 / 1;
+    min-width: 0;
 
-    grid-template-columns: 1fr 500px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 500px);
 
     gap: 60px;
 
     align-items: center;
     opacity: 0;
-    transform: translateY(20px);
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1), visibility 0s .4s;
 }
 
 .project-content.active {
-    display: grid;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
-    animation: projectFade .35s ease;
-}
-
-
-@keyframes projectFade {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    transition-delay: 0s;
 }
 
 .project-info h2 {
@@ -1355,12 +1384,13 @@ textarea {
     height: 260px;
     overflow: hidden;
     align-items: flex-end;
-    margin-top:-120px;
+    margin-top: -60px;
 }
 
 .project-shape {
     flex: 1;
-    height: 200px;
+    height: 230px;
+    transform: translateY(30px);
     margin-right: -60px;
     position:relative;
     border: none;
@@ -1368,9 +1398,9 @@ textarea {
     cursor: pointer;
 
     transition:
-    height .35s ease,
-    background .35s ease,
-    box-shadow .35s ease;
+    transform .4s cubic-bezier(.22, 1, .36, 1),
+    background-color .3s ease,
+    box-shadow .3s ease;
 
     clip-path: polygon(
     25% 0,
@@ -1392,8 +1422,10 @@ textarea {
 .project-shape:nth-child(7) { background:#555555; }
 .project-shape:nth-child(8) { background:#222222; }
 
-.project-shape:hover {
-    height: 230px;
+@media (hover: hover) and (pointer: fine) {
+    .project-shape:not(:disabled):hover {
+        transform: translateY(0);
+    }
 }
 
 .project-shape::before{
@@ -1421,11 +1453,11 @@ textarea {
 
     opacity:0;
 
-    transition:.35s;
+    transition: opacity .3s ease;
 
 }
 
-.project-shape:hover::before,
+.project-shape:not(:disabled):hover::before,
 .project-shape.active::before{
 
     opacity:1;
@@ -1434,12 +1466,37 @@ textarea {
 
 .project-shape.active {
     background: #f5b126 !important;
-    height: 230px;
+    transform: translateY(0);
     box-shadow:
         inset 0 0 0 1px rgba(255,255,255,.15),
         0 10px 30px rgba(245,177,38,.15);
 
     z-index: 0;
+}
+
+.project-shape:focus-visible {
+    transform: translateY(0);
+    box-shadow: inset 0 0 0 4px #111;
+}
+
+.project-shape:disabled {
+    cursor: default;
+}
+
+@media (max-width: 900px) {
+    .project-viewer { padding: 32px 24px; min-height: 460px; }
+    .project-content { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+    .project-info h2 { font-size: clamp(28px, 7vw, 48px); }
+    .project-meta { flex-wrap: wrap; gap: 24px; }
+    .project-selector { height: 160px; margin-top: 0; }
+    .project-shape { height: 150px; margin-right: -12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-content,
+    .project-shape,
+    .project-shape::before { transition: none; }
+    .project-content { transform: none; }
 }
 
 .projects-wrapper {
@@ -1458,24 +1515,22 @@ textarea {
 .exploits-hero {
     position: relative;
     height: 700px;
+    isolation: isolate;
+    overflow: hidden;
 }
 
 .letter-glitch {
     position: absolute;
     inset: 0;
+    pointer-events: none;
+    z-index: 0;
 }
 
 #glitchCanvas {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    z-index: 999999 !important;
-
-    border: 5px solid red !important;
+    display: block;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
 .exploit-overlay {
@@ -1490,7 +1545,7 @@ textarea {
 }
 
 .exploit-overlay h1 {
-    font-size: 120px;
+    font-size: clamp(48px, 10vw, 120px);
     font-weight: 900;
 }
 
@@ -1654,10 +1709,13 @@ textarea {
     gap:10px;
     padding:14px 24px;
     background:#f5b126;
+    font-family: var(--font-mono);
     border:none;
     cursor:pointer;
-    font-size:15px;
+    font-size:20px;
     font-weight:400;
+    margin-left:auto;
+    margin-top:40px;
 }
 
 .about-sidebar{
@@ -1731,7 +1789,7 @@ textarea {
 
 .sidebar-content{
     padding:15px 5px;
-    font-family:monospace;
+    font-family: var(--font-mono);
     font-size:17px;
     line-height:1.6;
 }
@@ -1764,18 +1822,31 @@ textarea {
     margin-top:30px;
 }
 
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    margin-top:40px;
+
+}
+
+
 .chevron-arrows{
     display:flex;
     align-items:center;
-    gap:-2px;
 }
+
 
 .chevron{
     font-size:80px;
-    font-weight:1000;
+    font-weight:900;
     color:#c9c9c9;
     line-height:1;
-    font-family:Arial, sans-serif;
+    font-family: var(--font-sans);
 }
 
 /* Loading Page */
@@ -1806,10 +1877,9 @@ textarea {
 
     opacity: 1;
 
-    font-family: "Mona Sans Variable", Arial, sans-serif;
+    font-family: var(--font-sans);
     font-size: 18px;
     font-weight: 800;
-    font-variation-settings: "wdth" 86;
     text-transform: uppercase;
     line-height: 1;
     letter-spacing: -0.01em;
@@ -1842,14 +1912,14 @@ textarea {
     text-decoration:none;
 
     padding:14px 22px;
-
+    font-size: 20px;
     display:flex;
     align-items:center;
     gap:10px;
 
-    font-family:"Mona Sans Variable", Arial, sans-serif;
+    font-family: var(--font-mono);
 
-    font-weight:700;
+    font-weight:600;
 
     letter-spacing:.04em;
 

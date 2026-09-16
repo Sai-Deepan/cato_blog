@@ -1,8 +1,10 @@
 {{ define "main" }}
 
-<section class="contact-section">
+<link rel="stylesheet" href="/css/contact.css">
+<section class="contact-section contact-page">
 
     <div class="contact-left">
+        <p class="contact-eyebrow">DEEPAN SAI / LET'S CONNECT</p>
         <h1 class="contact-title">
             <span class="lets">LET'S</span>
             <span class="talk">TALK</span>
@@ -11,20 +13,27 @@
 
     <div class="contact-right">
 
-        <h3>CONTACT</h3>
+        <h2>CONTACT</h2>
 
         <form>
 
             <div class="input-row">
-                <input type="text" placeholder="ENTER NAME">
-                <input type="email" placeholder="ENTER MAIL">
+                <div class="contact-field">
+                    <label for="contact-name">NAME</label>
+                    <input id="contact-name" type="text" placeholder="ENTER NAME" autocomplete="name">
+                </div>
+                <div class="contact-field">
+                    <label for="contact-email">EMAIL</label>
+                    <input id="contact-email" type="email" placeholder="ENTER MAIL" autocomplete="email">
+                </div>
             </div>
 
-            <textarea placeholder="SUBJECT"></textarea>
+            <label for="contact-subject">SUBJECT</label>
+            <textarea id="contact-subject" placeholder="SUBJECT"></textarea>
 
-            <button class="submit-btn">
+            <button class="submit-btn" type="submit">
                 SUBMIT
-                <span class="arrow">↗</span>
+                <span class="arrow" aria-hidden="true">&nearr;</span>
             </button>
 
         </form>

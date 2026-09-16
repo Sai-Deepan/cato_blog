@@ -1,68 +1,37 @@
 {{ define "main" }}
-
-<section class="site-content">
-
-    <div class="hero-nav">
-
-        <a href="/resume.pdf" class="resume-btn" target="_blank">
-
-            RESUME
-
-            <span>↗</span>
-
-        </a>
-
-        <button class="menu-btn">
-
-            <span></span>
-            <span></span>
-
-        </button>
-
-    </div>
-
-    <section class="hero">
-
-        <div class="terminal-window">
-
-            <div class="terminal-header">
-                ~:bash>console
-            </div>
-
-            <div id="terminal-output">
-
-                <div class="line">
-                    <span class="prompt">root@root:~$</span>
-                    neofetch
-                </div>
-
-                <div class="line">
-                    Welcome to Deepan Sai's research terminal.
-                </div>
-
-                <div class="line">
-                    Type <b>help</b> to get started.
-                </div>
-
-            </div>
-
-            <div class="terminal-input-row">
-
-                <span class="prompt">
-                    root@root:~$
-                </span>
-
-                <input
-                    id="terminal-input"
-                    type="text"
-                    autofocus>
-
-            </div>
-
+<link rel="stylesheet" href="/css/home.css">
+<div class="home-page">
+    <section class="home-intro" aria-labelledby="home-title">
+        <div class="home-intro-copy">
+            <p class="home-kicker"><span aria-hidden="true"></span> DEEPAN SAI / CATOTHEYOUNGER</p>
+            <h1 id="home-title">Break it down.<br>Build it <em>better.</em></h1>
+            <p class="home-lead">Security research, systems engineering, and machine learning. A place for the things I build, investigate, and learn along the way.</p>
+            <div class="home-actions"><a class="home-button" href="#home-projects">Explore my projects <span aria-hidden="true">?</span></a><a class="home-button home-resume-button" href="/resume.pdf">Resume <span aria-hidden="true">&nearr;</span></a><a class="home-link" href="/about/">Meet the researcher <span aria-hidden="true">?</span></a></div>
         </div>
-
+        <aside class="home-system" aria-label="Areas of interest">
+            <div class="home-system-bar"><span><i></i><i></i><i></i></span> ~/research/workspace</div>
+            <div class="home-system-content"><p class="home-system-command">$ cat interests.txt</p><div class="home-system-row"><span>01</span><div><strong>Security</strong><p>Look beneath the surface.</p></div><span aria-hidden="true">?</span></div><div class="home-system-row"><span>02</span><div><strong>Systems</strong><p>Understand how it works.</p></div><span aria-hidden="true">?</span></div><div class="home-system-row"><span>03</span><div><strong>Intelligence</strong><p>Turn ideas into experiments.</p></div><span aria-hidden="true">?</span></div><p class="home-system-foot">Curiosity ? investigation ? iteration</p></div>
+        </aside>
     </section>
-
-</section>
-
+    <div class="home-topic-strip" aria-label="Research interests"><span>SECURITY RESEARCH</span><span aria-hidden="true">+</span><span>OPEN SOURCE SYSTEMS</span><span aria-hidden="true">+</span><span>MACHINE LEARNING</span></div>
+    <section class="home-section" id="home-projects" aria-labelledby="home-project-title">
+        <div class="home-section-heading"><div><p class="home-kicker">01 / THINGS I BUILD</p><h2 id="home-project-title">From idea to implementation.</h2></div><a class="home-link" href="/about/#projects">Project details <span aria-hidden="true">?</span></a></div>
+        <div class="home-project-grid">
+            <article class="home-project home-project-feature"><div class="home-card-top"><span>ANDROID / SECURITY</span><span>01</span></div><div class="home-project-glyph" aria-hidden="true">[ H_ ]</div><h3>Hackdroid</h3><p>A custom LineageOS distribution built for security testing on Android systems.</p><div class="home-project-bottom"><span class="home-status">Active development</span><span>LineageOS ? SELinux ? Magisk</span></div></article>
+            <article class="home-project"><div class="home-card-top"><span>BSD / SYSTEMS</span><span>02</span></div><div class="home-project-glyph" aria-hidden="true">{ B_ }</div><h3>BlackBSD</h3><p>A security-focused FreeBSD distribution for researchers.</p><div class="home-project-bottom"><span>FreeBSD</span></div></article>
+            <article class="home-project"><div class="home-card-top"><span>QUANT / RESEARCH</span><span>03</span></div><div class="home-project-glyph" aria-hidden="true">&lt; A_ &gt;</div><h3>Atlas Quant</h3><p>A platform for quantitative research and algorithmic trading.</p><div class="home-project-bottom"><span>Quantitative systems</span></div></article>
+        </div>
+    </section>
+    <section class="home-section home-reading" aria-labelledby="home-reading-title">
+        <div><p class="home-kicker">02 / NOTES & INVESTIGATIONS</p><h2 id="home-reading-title">Follow the curiosity.</h2><p class="home-section-description">Explore the article collection, visit the exploit research archive, or get to know the person behind the projects.</p><a class="home-link" href="/articles/">Browse the article index <span aria-hidden="true">?</span></a></div>
+        <div class="home-reading-links"><a href="/articles/"><span class="home-reading-number">01</span><div><h3>Articles & technical notes</h3><p>Networking, security, and quantitative computing.</p></div><span aria-hidden="true">?</span></a><a href="/exploits/"><span class="home-reading-number">02</span><div><h3>Exploit research</h3><p>A dedicated archive for vulnerability write-ups.</p></div><span aria-hidden="true">?</span></a><a href="/about/"><span class="home-reading-number">03</span><div><h3>Behind the work</h3><p>My background, interests, and technical toolkit.</p></div><span aria-hidden="true">?</span></a></div>
+    </section>
+    {{ $reading := slice }}
+    {{ range where .Site.RegularPages "Section" "in" (slice "articles" "blog") }}{{ if gt (len (trim .Plain " \n\r\t")) 0 }}{{ $reading = $reading | append . }}{{ end }}{{ end }}
+    {{ with first 3 (sort $reading "Date" "desc") }}
+    <section class="home-section" aria-labelledby="home-latest-title"><div class="home-section-heading"><div><p class="home-kicker">FROM THE NOTEBOOK</p><h2 id="home-latest-title">Recent writing.</h2></div></div><div class="home-latest-grid">{{ range . }}<article><p class="home-kicker">{{ .Section }}</p><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p>{{ .Description | default (.Summary | plainify | truncate 150) }}</p></article>{{ end }}</div></section>
+    {{ end }}
+    <section class="home-section home-console-section" aria-labelledby="home-console-title"><div><p class="home-kicker">03 / TAKE A SHORTCUT</p><h2 id="home-console-title">More of a terminal person?</h2><p>Open the console and type <code>help</code>, or press <kbd>/</kbd> to jump in.</p></div><details class="home-console" id="home-console"><summary>Open interactive terminal <span aria-hidden="true">?</span></summary><div class="terminal-window"><div class="terminal-header">~:bash&gt;console</div><div id="terminal-output" role="log" aria-label="Terminal output" aria-live="polite" aria-relevant="additions"><div class="line">Welcome to Deepan Sai?s research terminal.</div><div class="line">Type help for commands. Escape closes the console.</div></div><div class="terminal-input-row"><label class="prompt" for="terminal-input">visitor:~$</label><input id="terminal-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></div></div></details></section>
+    <section class="home-contact" aria-labelledby="home-contact-title"><div><p class="home-kicker">GOOD WORK STARTS WITH A CONVERSATION</p><h2 id="home-contact-title">Have something interesting<br>in mind?</h2></div><a class="home-button" href="/contact/">Let?s talk <span aria-hidden="true">?</span></a></section>
+</div>
 {{ end }}

@@ -1,36 +1,18 @@
 {{ define "main" }}
-
-    {{ partial "featured-section.html" . }}
-
-    {{ partial "recent-section.html" . }}
-
-    {{ partial "quant-section.html" . }}
-
-    {{ partial "learning-section.html" . }}
-
-<section class="newsletter">
-
-    <h2>SUBSCRIBE TO SIGNAL</h2>
-
-    <p>
-        UPDATES ON LATEST TECHNOLOGY, CVEs AND EXPERIMENTS<br>
-        STRAIGHT TO YOUR MAIL BOX
-    </p>
-
-    <form class="newsletter-form">
-
-        <input
-            type="email"
-            placeholder="ENTER MAIL"
-            required>
-
-        <button type="submit">
-            SUBSCRIBE
-            <span>↗</span>
-        </button>
-
-    </form>
-
-</section>
-
+<link rel="stylesheet" href="/css/blog.css">
+<script defer src="/js/blog.js"></script>
+{{ $posts := .RegularPages.ByDate.Reverse }}
+{{ $categories := slice }}{{ range $posts }}{{ $categories = $categories | append (.Params.category | default "notes" | lower) }}{{ end }}{{ $categories = $categories | uniq | sort }}
+<div class="journal-page">
+    <header class="journal-intro"><div><p class="journal-kicker">THE BLOG / DEEPAN SAI</p><h1>Notes from<br>the <em>workbench.</em></h1><p class="journal-lead">Things learned, questions explored, and ideas worth writing down. Across security, systems, and quantitative computing.</p><a class="journal-link" href="#notebook">Explore the notebook <span aria-hidden="true">?</span></a></div><div class="journal-cover" aria-hidden="true"><div><span>FIELD NOTES</span><span>DS / 01</span></div><p>Observe.<br>Question.<br><span>Understand.</span></p><span class="journal-cover-caption">SECURITY / SYSTEMS / EXPERIMENTS</span></div></header>
+    <section class="journal-archive" id="notebook" aria-labelledby="notebook-title"><div class="journal-heading"><div><p class="journal-kicker">THE INDEX</p><h2 id="notebook-title">In the notebook</h2></div><span class="journal-total">{{ len $posts }} {{ if eq (len $posts) 1 }}entry{{ else }}entries{{ end }}</span></div>
+    {{ if $posts }}
+        <form class="journal-filters" role="search" aria-label="Search blog entries" hidden><div><label for="journal-search">Search entries</label><input id="journal-search" type="search" placeholder="A title, topic, or keyword?" autocomplete="off"></div><div><label for="journal-category">Topic</label><select id="journal-category"><option value="">All topics</option>{{ range $categories }}<option value="{{ . }}">{{ . | humanize | title }}</option>{{ end }}</select></div></form>
+        <p class="journal-results" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        <div class="journal-grid">{{ range $posts }}{{ $hasBody := gt (len (trim .Plain " \n\r\t")) 0 }}<article class="journal-card" data-category="{{ .Params.category | default "notes" | lower }}"><div class="journal-card-meta"><span>{{ .Params.category | default "notes" | humanize | title }}</span><span>{{ if $hasBody }}{{ .ReadingTime }} min read{{ else }}Outline{{ end }}</span></div><h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>{{ with (.Description | default .Params.subtitle) }}<p>{{ . }}</p>{{ else }}{{ if $hasBody }}<p>{{ .Summary | plainify | truncate 160 }}</p>{{ else }}<p>A notebook entry with no write-up published yet.</p>{{ end }}{{ end }}<div class="journal-card-bottom">{{ if and $hasBody (not .Date.IsZero) }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>{{ else }}<span>{{ if $hasBody }}From the notebook{{ else }}Write-up not yet available{{ end }}</span>{{ end }}<span aria-hidden="true">?</span></div></article>{{ end }}</div>
+        <div class="journal-empty" hidden><h3>No matching entries</h3><p>Try another keyword or browse all topics.</p><button type="button" class="journal-link" id="journal-reset">Clear filters <span aria-hidden="true">?</span></button></div>
+    {{ else }}<div class="journal-empty"><h3>A fresh notebook.</h3><p>No entries have been added yet. Explore the projects while the collection takes shape.</p><a class="journal-link" href="/about/#projects">Explore projects <span aria-hidden="true">?</span></a></div>{{ end }}
+    </section>
+    <aside class="journal-follow" aria-labelledby="journal-follow-title"><div><p class="journal-kicker">KEEP IN THE LOOP</p><h2 id="journal-follow-title">Follow at your own pace.</h2><p>Add the blog?s RSS feed to your reader to follow new entries.</p></div><a class="journal-button" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ else }}/index.xml{{ end }}">Follow via RSS <span aria-hidden="true">?</span></a></aside>
+</div>
 {{ end }}

@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "gsap": "^3.15.0"
+  },
+  "devDependencies": {
+    "decap-server": "3.9.0"
+  },
+  "scripts": {
+    "editor": "node scripts/editor.cjs",
+    "test:editor": "node --test scripts/editor.test.cjs",
+    "build": "hugo",
+    "test:articles": "node --test scripts/article-index.test.cjs",
+    "test:research": "node --test scripts/research.test.cjs",
+    "test:cves": "node --test scripts/cves.test.cjs"
   }
 }

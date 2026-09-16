@@ -1,4 +1,6 @@
 ---
+cms_entry: true
+draft: false
 title: "Wire Shark"
 description: "Network packet analysis"
 category: "hacking"

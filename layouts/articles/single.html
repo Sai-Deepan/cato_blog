@@ -1,0 +1,9 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/blog.css">
+<article class="journal-page journal-post">
+<a class="journal-link" href="/articles/">&larr; Back to articles</a>
+<header class="journal-post-header"><p class="journal-kicker">{{ .Params.category | default "Technical article" }}</p><h1>{{ .Title }}</h1>{{ with .Description }}<p class="journal-post-description">{{ . }}</p>{{ end }}<div class="journal-post-meta"><span>Deepan Sai</span>{{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02 Jan 2006" }}</time>{{ end }}{{ if .Plain }}<span>{{ .ReadingTime }} min read</span>{{ end }}</div></header>
+{{ with .Params.image }}{{ if and (hasPrefix . "/") (fileExists (printf "static%s" .)) }}<img class="journal-post-cover" src="{{ . }}" alt="{{ $.Params.cover_alt | default "" }}">{{ end }}{{ end }}
+{{ if .Plain }}{{ if gt (len .Fragments.Headings) 0 }}<details class="journal-toc"><summary>On this page</summary>{{ .TableOfContents }}</details>{{ end }}<div class="journal-prose">{{ .Content }}</div>{{ else }}<div class="journal-outline"><h2>The write-up is not here yet.</h2><p>This entry has no published body text yet.</p></div>{{ end }}
+</article>
+{{ end }}

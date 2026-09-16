@@ -3,17 +3,9 @@
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>Blog</title>
     <script defer src="/js/skills.js"></script>
-    <script defer src="/js/search.js"></script>
     <script defer src="/js/projects.js"></script>
-    <script defer src="/js/glitch.js"></script>
-    <script defer src="/js/articles-filter.js"></script>
     <script defer src="/js/cursor.js"></script>
 
     
@@ -23,7 +15,7 @@
     
     <script defer src="/js/loading-page.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/fonts/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/cursor.css">
 
@@ -129,236 +121,22 @@
 
     <main>
         
-
-    <section class="blog-section">
-
-    <div class="section-title">
-
-        <span class="section-number">/01</span>
-
-        <h2>FEATURED WORKS</h2>
-
-    </div>
-
-    <div class="blog-grid">
-
-        
-
-            <a href="/blog/test/" class="blog-card">
-
-    <img src="/images/gridline.jpg" alt="WIRE_SHARK">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>WIRE_SHARK</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p>Network Hacking Theory</p>
-
-    </div>
-
-</a>
-
-        
-
-    </div>
-
-</section>
-
-    <section class="blog-section">
-
-    <div class="section-title">
-
-        <span class="section-number">/02</span>
-
-        <h2>RECENT</h2>
-
-    </div>
-
-    <div class="blog-grid">
-
-        
-
-            <a href="/blog/learning/" class="blog-card">
-
-    <img src="" alt="NMAP Scan">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>NMAP Scan</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p></p>
-
-    </div>
-
-</a>
-
-        
-
-            <a href="/blog/quant/" class="blog-card">
-
-    <img src="" alt="Portfolio Optimization">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>Portfolio Optimization</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p></p>
-
-    </div>
-
-</a>
-
-        
-
-            <a href="/blog/test/" class="blog-card">
-
-    <img src="/images/gridline.jpg" alt="WIRE_SHARK">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>WIRE_SHARK</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p>Network Hacking Theory</p>
-
-    </div>
-
-</a>
-
-        
-
-    </div>
-
-</section>
-
-    <section class="blog-section">
-
-    <div class="section-title">
-
-        <span class="section-number">/03</span>
-
-        <h2>QUANT</h2>
-
-    </div>
-
-    <div class="blog-grid">
-
-        
-
-            <a href="/blog/quant/" class="blog-card">
-
-    <img src="" alt="Portfolio Optimization">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>Portfolio Optimization</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p></p>
-
-    </div>
-
-</a>
-
-        
-
-    </div>
-
-</section>
-
-    <section class="blog-section">
-
-    <div class="section-title">
-
-        <span class="section-number">/04</span>
-
-        <h2>LEARNING</h2>
-
-    </div>
-
-    <div class="blog-grid">
-
-        
-
-            <a href="/blog/learning/" class="blog-card">
-
-    <img src="" alt="NMAP Scan">
-
-    <div class="blog-card-content">
-
-        <div class="blog-card-header">
-            <h3>NMAP Scan</h3>
-
-            <span class="card-arrow">
-                ↗
-            </span>
-        </div>
-
-        <p></p>
-
-    </div>
-
-</a>
-
-        
-
-    </div>
-
-</section>
-
-<section class="newsletter">
-
-    <h2>SUBSCRIBE TO SIGNAL</h2>
-
-    <p>
-        UPDATES ON LATEST TECHNOLOGY, CVEs AND EXPERIMENTS<br>
-        STRAIGHT TO YOUR MAIL BOX
-    </p>
-
-    <form class="newsletter-form">
-
-        <input
-            type="email"
-            placeholder="ENTER MAIL"
-            required>
-
-        <button type="submit">
-            SUBSCRIBE
-            <span>↗</span>
-        </button>
-
-    </form>
-
-</section>
-
+<link rel="stylesheet" href="/css/blog.css">
+<script defer src="/js/blog.js"></script>
+
+
+<div class="journal-page">
+    <header class="journal-intro"><div><p class="journal-kicker">THE BLOG / DEEPAN SAI</p><h1>Notes from<br>the <em>workbench.</em></h1><p class="journal-lead">Things learned, questions explored, and ideas worth writing down. Across security, systems, and quantitative computing.</p><a class="journal-link" href="#notebook">Explore the notebook <span aria-hidden="true">?</span></a></div><div class="journal-cover" aria-hidden="true"><div><span>FIELD NOTES</span><span>DS / 01</span></div><p>Observe.<br>Question.<br><span>Understand.</span></p><span class="journal-cover-caption">SECURITY / SYSTEMS / EXPERIMENTS</span></div></header>
+    <section class="journal-archive" id="notebook" aria-labelledby="notebook-title"><div class="journal-heading"><div><p class="journal-kicker">THE INDEX</p><h2 id="notebook-title">In the notebook</h2></div><span class="journal-total">3 entries</span></div>
+    
+        <form class="journal-filters" role="search" aria-label="Search blog entries" hidden><div><label for="journal-search">Search entries</label><input id="journal-search" type="search" placeholder="A title, topic, or keyword?" autocomplete="off"></div><div><label for="journal-category">Topic</label><select id="journal-category"><option value="">All topics</option><option value="learning">Learning</option><option value="notes">Notes</option><option value="quant">Quant</option></select></div></form>
+        <p class="journal-results" role="status" aria-live="polite" aria-atomic="true" hidden></p>
+        <div class="journal-grid"><article class="journal-card" data-category="notes"><div class="journal-card-meta"><span>Notes</span><span>Outline</span></div><h3><a href="/blog/test/">WIRE_SHARK</a></h3><p>Network Hacking Theory</p><div class="journal-card-bottom"><span>Write-up not yet available</span><span aria-hidden="true">?</span></div></article><article class="journal-card" data-category="quant"><div class="journal-card-meta"><span>Quant</span><span>Outline</span></div><h3><a href="/blog/quant/">Portfolio Optimization</a></h3><p>A notebook entry with no write-up published yet.</p><div class="journal-card-bottom"><span>Write-up not yet available</span><span aria-hidden="true">?</span></div></article><article class="journal-card" data-category="learning"><div class="journal-card-meta"><span>Learning</span><span>Outline</span></div><h3><a href="/blog/learning/">NMAP Scan</a></h3><p>A notebook entry with no write-up published yet.</p><div class="journal-card-bottom"><span>Write-up not yet available</span><span aria-hidden="true">?</span></div></article></div>
+        <div class="journal-empty" hidden><h3>No matching entries</h3><p>Try another keyword or browse all topics.</p><button type="button" class="journal-link" id="journal-reset">Clear filters <span aria-hidden="true">?</span></button></div>
+    
+    </section>
+    <aside class="journal-follow" aria-labelledby="journal-follow-title"><div><p class="journal-kicker">KEEP IN THE LOOP</p><h2 id="journal-follow-title">Follow at your own pace.</h2><p>Add the blog?s RSS feed to your reader to follow new entries.</p></div><a class="journal-button" href="/blog/index.xml">Follow via RSS <span aria-hidden="true">?</span></a></aside>
+</div>
 
     </main>
 

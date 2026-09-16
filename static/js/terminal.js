@@ -1,116 +1,47 @@
-const terminal = document.querySelector(".terminal-window");
-const input = document.getElementById("terminal-input");
-const output = document.getElementById("terminal-output");
-
-/* Open terminal with / */
-document.addEventListener("keydown", function (e) {
-
-    const tag = document.activeElement.tagName;
-
-    if (tag === "INPUT" || tag === "TEXTAREA") return;
-
-    if (e.key === "/") {
-
-        e.preventDefault();
-
-        terminal.classList.add("active");
-
-        input.focus();
+(() => {
+    const terminal = document.querySelector('.terminal-window');
+    const input = document.getElementById('terminal-input');
+    const output = document.getElementById('terminal-output');
+    const consolePanel = document.getElementById('home-console');
+    if (!terminal || !input || !output) return;
+    const routes = { about: '/about/', projects: '/#home-projects', research: '/research/', articles: '/articles/', exploits: '/exploits/', blog: '/blog/', cves: '/cves/', contact: '/contact/' };
+    const responses = {
+        help: 'Commands: about, projects, research, articles, exploits, blog, cves, contact, whoami, clear.\nPress Escape to close.',
+        whoami: 'Deepan Sai / CatoTheYounger\nSecurity research ? systems engineering ? machine learning',
+        resume: 'Visit About for my background and experience: /about/'
+    };
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && consolePanel?.open) {
+            consolePanel.open = false;
+            consolePanel.querySelector('summary').focus();
+            return;
+        }
+        const active = document.activeElement;
+        if (active?.matches('input, textarea, select') || active?.isContentEditable || event.ctrlKey || event.metaKey || event.altKey) return;
+        if (event.key === '/') {
+            event.preventDefault();
+            if (consolePanel) consolePanel.open = true;
+            terminal.classList.add('active');
+            input.focus();
+        }
+    });
+    function addLine(text) {
+        const line = document.createElement('div');
+        line.className = 'line';
+        line.textContent = text;
+        output.appendChild(line);
+        while (output.children.length > 80) output.firstElementChild.remove();
+        output.scrollTop = output.scrollHeight;
     }
-
-    if (e.key === "Escape") {
-
-        terminal.classList.remove("active");
-    }
-});
-
-const commands = {
-
-    help: `
-about
-research
-articles
-cves
-resume
-contact
-clear
-`,
-
-    about: `
-Deepan Sai
-Security Researcher
-AI Researcher
-Developer
-`,
-
-    research: `
-Opening Research...
-`,
-
-    articles: `
-Opening Articles...
-`,
-
-    cves: `
-Opening CVEs...
-`,
-
-    resume: `
-Resume available soon.
-`,
-
-    contact: `
-GitHub: github.com/yourusername
-Email: you@example.com
-`
-};
-
-function addLine(text) {
-
-    const div = document.createElement("div");
-
-    div.className = "line";
-
-    div.innerHTML = text;
-
-    output.appendChild(div);
-
-    output.scrollTop = output.scrollHeight;
-}
-
-input.addEventListener("keydown", function(e){
-
-    if(e.key !== "Enter") return;
-
-    const cmd = input.value.trim().toLowerCase();
-
-    addLine(`<span class="prompt">root@root:~$</span> ${cmd}`);
-
-    if(cmd === "clear") {
-
-        output.innerHTML = "";
-
-        input.value = "";
-
-        return;
-    }
-
-    if(cmd === "research") {
-        window.location.href = "/research/";
-        return;
-    }
-
-    if(cmd === "articles") {
-        window.location.href = "/articles/";
-        return;
-    }
-
-    if(cmd === "cves") {
-        window.location.href = "/cves/";
-        return;
-    }
-
-    addLine(commands[cmd] || "Command not found.");
-
-    input.value = "";
-});
+    input.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' || event.isComposing) return;
+        event.preventDefault();
+        const command = input.value.trim().toLowerCase();
+        input.value = '';
+        if (!command) return;
+        if (command === 'clear') { output.replaceChildren(); return; }
+        addLine('visitor:~$ ' + command);
+        if (Object.hasOwn(routes, command)) { window.location.href = routes[command]; return; }
+        addLine(Object.hasOwn(responses, command) ? responses[command] : 'Command not found. Type help for available commands.');
+    });
+})();

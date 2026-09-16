@@ -1,5 +1,7 @@
 window.addEventListener("load", () => {
 
+    if (!document.querySelector(".journey-map") || !window.gsap || !window.ScrollTrigger) return;
+
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({

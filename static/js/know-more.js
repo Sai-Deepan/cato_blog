@@ -1,8 +1,12 @@
+(() => {
 const sidebar = document.getElementById("aboutSidebar");
 const overlay = document.getElementById("sidebarOverlay");
 
 const heroLeft = document.querySelector(".about-left");
 const heroRight = document.querySelector(".about-right");
+
+if (!sidebar || !overlay || !document.getElementById("knowMoreBtn") ||
+    !document.getElementById("closeSidebar")) return;
 
 document
     .getElementById("knowMoreBtn")
@@ -39,3 +43,4 @@ function closeSidebar() {
     });
 
 }
+})();

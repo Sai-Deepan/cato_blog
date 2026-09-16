@@ -1,6 +1,24 @@
+(() => {
+    const loader = document.getElementById("loader");
+    if (!loader) return;
+    let timeline;
+    const dismiss = () => {
+        timeline?.kill();
+        loader.style.display = "none";
+        clearTimeout(fallback);
+    };
+    // Never leave a blocking overlay behind if a CDN or page asset fails to load.
+    const fallback = setTimeout(dismiss, 4000);
+
 window.addEventListener("load", () => {
 
-    const tl = gsap.timeline();
+    if (loader.style.display === "none") return;
+    if (!window.gsap || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        dismiss();
+        return;
+    }
+
+    const tl = timeline = gsap.timeline({ onComplete: dismiss });
 
     tl.fromTo(".loader-logo",
     {
@@ -29,3 +47,4 @@ window.addEventListener("load", () => {
     });
 
 });
+})();
