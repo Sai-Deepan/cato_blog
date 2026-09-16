@@ -79,7 +79,7 @@
  .home-contact { padding: 28px; margin-top: 40px; }
 }
 /* Keep the shared navigation and footer usable on the homepage's small screens. */
-@media (max-width: 900px) { body:has(.home-page) .navbar ul { flex-wrap: wrap; justify-content: center; gap: 10px 18px; padding: 0 16px; } body:has(.home-page) .navbar a { font-size: 14px; } body:has(.home-page) .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 24px 40px; gap: 32px; } body:has(.home-page) .socials { flex-wrap: wrap; } }
+@media (max-width: 900px) { body:has(.home-page) .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 24px 40px; gap: 32px; } body:has(.home-page) .socials { flex-wrap: wrap; } }
 @media (max-width: 420px) { body:has(.home-page) .footer-grid { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .home-button > span, .home-link > span { transition: none; transform: none; } }
 

@@ -79,11 +79,19 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar ul {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 55px;
+    max-width: 100%;
+    padding: 0 16px;
     list-style: none;
 }
 
 .navbar a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     text-decoration: none;
     color: #111;
     font-size: 18px;
@@ -97,6 +105,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar a:hover {
     opacity: 0.5;
+}
+
+.navbar a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+}
+
+@media (max-width: 1200px) {
+    .navbar ul {
+        gap: 8px 12px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
 }
 
 /* TOP LINE */
