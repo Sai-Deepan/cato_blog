@@ -2,56 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/experience/freebsd-org/</loc>
+    <loc>http://localhost:60819/experience/freebsd-org/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/experience/openai/</loc>
+    <loc>http://localhost:60819/experience/openai/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:60819/about/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/ai/ml/</loc>
+    <loc>http://localhost:60819/articles/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/articles/</loc>
+    <loc>http://localhost:60819/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>http://localhost:60819/contact/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:60819/cves/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>http://localhost:60819/experience/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/cves/</loc>
+    <loc>http://localhost:60819/exploits/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/experience/</loc>
+    <loc>http://localhost:60819/articles/freebsd-networking/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/exploits/</loc>
+    <loc>http://localhost:60819/articles/nmap-scan/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/finance/</loc>
+    <loc>http://localhost:60819/blog/learning/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/articles/freebsd-networking/</loc>
+    <loc>http://localhost:60819/blog/quant/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/hacking/</loc>
+    <loc>http://localhost:60819/articles/quant-trading/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/tags/network/</loc>
+    <loc>http://localhost:60819/research/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/articles/nmap-scan/</loc>
+    <loc>http://localhost:60819/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/blog/learning/</loc>
+    <loc>http://localhost:60819/articles/wireshark/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/blog/quant/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/quant/</loc>
-  </url><url>
-    <loc>http://localhost:1313/articles/quant-trading/</loc>
-  </url><url>
-    <loc>http://localhost:1313/research/</loc>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/trading/</loc>
-  </url><url>
-    <loc>http://localhost:1313/articles/wireshark/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/test/</loc>
+    <loc>http://localhost:60819/blog/test/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

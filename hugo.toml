@@ -1,48 +1,90 @@
-baseURL = 'http://localhost:1313/'
-languageCode = 'en-us'
-title = 'Research Site'
+baseURL = "https://deepansai.vercel.app/"
+languageCode = "en-us"
+title = "Research Site"
+
+# URL configuration
+relativeURLs = false
+canonifyURLs = false
+enableRobotsTXT = true
+
+# Prevent unnecessary generated files
+disableKinds = ["taxonomy", "term"]
 
 [params]
-author = 'Your Name'
+author = "Deepan Sai"
+
+# --------------------------------------------------
+# Main Navigation
+# --------------------------------------------------
 
 [menu]
 
 [[menu.main]]
 name = "Home"
 url = "/"
-weight = 1
+weight = 10
 
 [[menu.main]]
 name = "About"
 url = "/about/"
-weight = 2
+weight = 20
 
 [[menu.main]]
 name = "Blog"
 url = "/blog/"
-weight = 3
+weight = 30
 
 [[menu.main]]
 name = "Articles"
 url = "/articles/"
-weight = 4
+weight = 40
 
 [[menu.main]]
 name = "Research"
 url = "/research/"
-weight = 5
+weight = 50
 
 [[menu.main]]
 name = "Exploits"
 url = "/exploits/"
-weight = 6
+weight = 60
 
 [[menu.main]]
 name = "CVEs"
 url = "/cves/"
-weight = 7
+weight = 70
 
 [[menu.main]]
 name = "Contact"
 url = "/contact/"
-weight = 8
+weight = 80
+
+# --------------------------------------------------
+# Markdown
+# --------------------------------------------------
+
+[markup]
+
+[markup.goldmark]
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+noClasses = false
+
+# --------------------------------------------------
+# Sitemap
+# --------------------------------------------------
+
+[sitemap]
+changefreq = "weekly"
+priority = 0.5
+filename = "sitemap.xml"
+
+# --------------------------------------------------
+# Build
+# --------------------------------------------------
+
+[build]
+writeStats = true
