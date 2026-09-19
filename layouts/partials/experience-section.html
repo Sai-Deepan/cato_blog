@@ -1,0 +1,25 @@
+<section class="experience-section" id="experience" aria-labelledby="experience-title">
+    <div class="experience-heading">
+        <p class="experience-kicker">EXPERIENCE / CONTRIBUTIONS</p>
+        <h2 id="experience-title">The work. The contribution.</h2>
+        <p>Explore my work with teams and open-source communities.</p>
+    </div>
+    <div class="experience-split">
+        {{ range slice (dict "category" "work" "title" "Work Experience" "number" "01" "description" "Projects and contributions within organizations.") (dict "category" "open-source" "title" "Open Source Contributions" "number" "02" "description" "Contributions to shared tools and systems.") }}
+        <div class="experience-group">
+            <p class="experience-kicker">{{ .number }} / {{ if eq .category "work" }}ORGANIZATIONS{{ else }}COMMUNITIES{{ end }}</p>
+            <h3>{{ .title }}</h3>
+            <p class="experience-group-description">{{ .description }}</p>
+            <ul class="experience-list">
+                {{ range (where (where $.Site.RegularPages "Section" "experience") "Params.category" .category).ByWeight }}
+                <li><a class="experience-card" href="{{ .RelPermalink }}">
+                    <span class="experience-monogram" aria-hidden="true">{{ .Params.monogram }}</span>
+                    <span class="experience-card-copy"><strong>{{ .Title }}</strong><span>{{ .Params.summary }}</span><span class="experience-card-action">View contributions &amp; impact</span></span>
+                    <span class="experience-arrow" aria-hidden="true">&nearr;</span>
+                </a></li>
+                {{ end }}
+            </ul>
+        </div>
+        {{ end }}
+    </div>
+</section>

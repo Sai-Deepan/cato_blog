@@ -1,0 +1,22 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/experience.css">
+<article class="experience-page">
+    <a class="experience-back" href="{{ "experience/" | relURL }}">&larr; All experience &amp; contributions</a>
+    <header class="experience-detail-header">
+        <span class="experience-monogram" aria-hidden="true">{{ .Params.monogram }}</span>
+        <p class="experience-kicker">{{ if eq .Params.category "work" }}WORK EXPERIENCE{{ else }}OPEN SOURCE CONTRIBUTIONS{{ end }}</p>
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Params.summary }}</p>
+    </header>
+    <dl class="experience-meta">
+        <div><dt>Role</dt><dd>{{ .Params.role | default "Details coming soon" }}</dd></div>
+        <div><dt>Period</dt><dd>{{ .Params.period | default "Dates coming soon" }}</dd></div>
+        <div><dt>Focus</dt><dd>{{ .Params.focus | default "Details coming soon" }}</dd></div>
+    </dl>
+    <div class="experience-prose">{{ .Content }}</div>
+    <nav class="experience-related" aria-label="More experience">
+        <h2>Explore more</h2>
+        <div>{{ range (where .Site.RegularPages "Section" "experience").ByWeight }}{{ if ne .RelPermalink $.RelPermalink }}<a href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">&nearr;</span></a>{{ end }}{{ end }}</div>
+    </nav>
+</article>
+{{ end }}

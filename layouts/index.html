@@ -1,5 +1,6 @@
 {{ define "main" }}
 <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/experience.css">
 <div class="home-page">
     <section class="home-intro" aria-labelledby="home-title">
         <div class="home-intro-copy">
@@ -22,6 +23,7 @@
             <article class="home-project"><div class="home-card-top"><span>QUANT / RESEARCH</span><span>03</span></div><div class="home-project-glyph" aria-hidden="true">&lt; A_ &gt;</div><h3>Atlas Quant</h3><p>A platform for quantitative research and algorithmic trading.</p><div class="home-project-bottom"><span>Quantitative systems</span></div></article>
         </div>
     </section>
+    {{ partial "experience-section.html" . }}
     <section class="home-section home-reading" aria-labelledby="home-reading-title">
         <div><p class="home-kicker">02 / NOTES & INVESTIGATIONS</p><h2 id="home-reading-title">Follow the curiosity.</h2><p class="home-section-description">Explore the article collection, visit the exploit research archive, or get to know the person behind the projects.</p><a class="home-link" href="/articles/">Browse the article index <span aria-hidden="true">?</span></a></div>
         <div class="home-reading-links"><a href="/articles/"><span class="home-reading-number">01</span><div><h3>Articles & technical notes</h3><p>Networking, security, and quantitative computing.</p></div><span aria-hidden="true">?</span></a><a href="/exploits/"><span class="home-reading-number">02</span><div><h3>Exploit research</h3><p>A dedicated archive for vulnerability write-ups.</p></div><span aria-hidden="true">?</span></a><a href="/about/"><span class="home-reading-number">03</span><div><h3>Behind the work</h3><p>My background, interests, and technical toolkit.</p></div><span aria-hidden="true">?</span></a></div>

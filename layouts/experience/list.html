@@ -1,0 +1,7 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/experience.css">
+<div class="experience-page">
+    <header class="experience-page-header"><p class="experience-kicker">THE PEOPLE AND PROJECTS BEHIND THE WORK</p><h1>{{ .Title }}</h1><p>{{ .Description }}</p></header>
+    {{ partial "experience-section.html" . }}
+</div>
+{{ end }}
