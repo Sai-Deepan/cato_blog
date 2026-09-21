@@ -1,0 +1,24 @@
+.project-back { margin-top: 36px; }
+.project-header { padding: 48px 0; border-bottom: 1px solid #bfc1b5; }
+.project-header h1 { font-size: clamp(44px, 7vw, 88px); line-height: 1.08; letter-spacing: -.06em; overflow-wrap: anywhere; }
+.project-header h1 span { color: #b47700; }
+.project-lead { max-width: 760px; margin-top: 24px; font-size: clamp(17px, 2vw, 23px); line-height: 1.7; color: #4e5146; }
+.project-facts { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 28px; }
+.project-facts .profile-tags { margin: 0; }
+.project-repository-pending { font: 12px/1.7 var(--font-mono); color: #65685b; border: 1px dashed #bfc1b5; padding: 14px 18px; }
+.project-body { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(32px, 6vw, 96px); padding: 48px 0 64px; }
+.project-toc { align-self: start; position: sticky; top: 28px; }
+.project-toc ul { list-style: none; padding: 0; }
+.project-toc a { display: inline-block; padding: 8px 0; font: 12px/1.7 var(--font-mono); text-decoration: none; color: #565b4d; }
+.project-toc a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.project-prose { max-width: 780px; min-width: 0; }
+.project-prose h2 { font-size: clamp(24px, 3vw, 34px); line-height: 1.25; letter-spacing: -.035em; padding-top: 36px; margin: 36px 0 20px; border-top: 1px solid #c9cbbf; scroll-margin-top: 32px; }
+.project-prose h2:first-child { padding: 0; margin-top: 0; border: 0; }
+.project-prose p, .project-prose li { font-size: 16px; line-height: 1.9; color: #4e5146; }
+.project-prose p + p { margin-top: 18px; }
+.project-prose ul { padding-left: 22px; }
+.project-prose li + li { margin-top: 10px; }
+.project-prose strong { color: #292e24; font-weight: 600; }
+.project-related { padding: 32px 0; border-top: 1px solid #bfc1b5; }
+.project-related > div { display: flex; flex-wrap: wrap; gap: 24px 48px; }
+@media (max-width: 760px) { .project-body { grid-template-columns: 1fr; gap: 36px; } .project-toc { position: static; border-bottom: 1px solid #bfc1b5; padding-bottom: 24px; } .project-toc ul { display: flex; flex-wrap: wrap; gap: 4px 24px; } .project-header { padding: 36px 0; } }

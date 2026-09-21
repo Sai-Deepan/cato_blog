@@ -1,10 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{{ $credentials := site.Data.credentials | default dict }}
+{{ $featured := where ($credentials.items | default slice) "featured" true }}
+<section class="profile-section credentials" id="credentials" aria-labelledby="credentials-title" data-credentials>
+    <div class="profile-section-heading">
+        <div><p class="profile-kicker">05 / CONTINUING TO LEARN</p><h2 id="credentials-title">Licenses &amp; certifications<span>.</span></h2></div>
+        <p>A selection of credentials.<br>Keep exploring. Keep learning.</p>
+    </div>
+    <div class="credentials-tools" hidden>
+        <div class="credentials-kinds" role="group" aria-label="Credential type">
+            <button type="button" data-kind="all" aria-pressed="true">All featured</button>
+            <button type="button" data-kind="certification" aria-pressed="false">Certifications</button>
+            <button type="button" data-kind="license" aria-pressed="false">Licenses</button>
+        </div>
+        <label class="credentials-issuer">Issuer
+            <select data-issuer><option value="all">All issuers</option>
+                {{ $issuers := $credentials.issuers | default slice }}
+                {{ range $featured }}{{ with .issuer }}{{ $issuers = $issuers | append . }}{{ end }}{{ end }}
+                {{ range ($issuers | uniq) }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+            </select>
+        </label>
+    </div>
+    <div class="credentials-gallery" aria-label="Featured credentials">
+        {{ range $index, $item := $featured }}
+        <article class="credential-card" data-kind="{{ .kind }}" data-issuer="{{ .issuer }}" aria-labelledby="credential-title-{{ $index }}">
+            <div class="credential-preview">
+                {{ with .image }}
+                <img src="{{ . | relURL }}" alt="{{ $item.title }} certificate" loading="lazy" width="960" height="680">
+                {{ else }}
+                <div class="credential-monogram" aria-hidden="true"><span>{{ with .issuer }}{{ . }}{{ else }}CREDENTIAL{{ end }}</span><strong>{{ .title }}</strong><span>DEEPAN SAI</span></div>
+                {{ end }}
+            </div>
+            <div class="credential-copy">
+                <p class="profile-kicker">FEATURED / {{ if eq .kind "license" }}LICENSE{{ else }}CERTIFICATION{{ end }}</p>
+                {{ with .issuer }}<p class="credential-provider">{{ . }}</p>{{ end }}
+                <h3 id="credential-title-{{ $index }}">{{ .title }}</h3>
+                {{ with .description }}<p class="credential-description">{{ . }}</p>{{ end }}
+                {{ with .issued }}<p class="credential-date">Issued {{ . }}</p>{{ end }}
+                {{ with .url }}<a class="profile-link" href="{{ . }}" target="_blank" rel="noopener noreferrer">View credential <span aria-hidden="true">&#8599;</span></a>{{ end }}
+            </div>
+        </article>
+        {{ end }}
+        <p class="credentials-empty" hidden>No featured credentials in this selection. Try another issuer or credential type.</p>
+    </div>
+    <div class="credentials-navigation" hidden>
+        <p class="credentials-count" role="status" aria-live="polite" aria-atomic="true"></p>
+        <div class="credentials-arrows"><button type="button" data-previous aria-label="Previous credential">&#8592;</button><button type="button" data-next aria-label="Next credential">&#8594;</button></div>
+    </div>
+    <div class="credentials-footer"><p>The full collection, all in one place.</p>
+        {{ with $credentials.drive_url }}<a class="profile-button credentials-more" href="{{ . }}" target="_blank" rel="noopener noreferrer" aria-label="More certificates and licenses on Google Drive">more &gt;&gt;&gt;</a>
+        {{ else }}<button class="profile-button credentials-more" type="button" disabled title="Certificate collection link coming soon">more &gt;&gt;&gt;</button>{{ end }}
+    </div>
+</section>

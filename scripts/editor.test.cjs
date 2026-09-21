@@ -21,37 +21,35 @@ test('collections preserve Hugo metadata, default to drafts, and use uploaded me
     assert.equal(typeof config.public_folder,'string');
     assert.equal(config.backend.branch,'master');
 });
-async function initialize(hostname, enabled=false, proxyOK=true) {
-    const nodes = Object.fromEntries(['editor-message','editor-notice','editor-start'].map(id=>[id,{}]));
-    let initialized;
-    const calls=[];
-    const context={location:{hostname,origin:'https://site.example'},document:{getElementById:id=>nodes[id]},window:{CMS:{init:value=>initialized=value}},fetch:async url=>{
-        calls.push(url);
-        return {ok:url.includes('8081')?proxyOK:true,json:async()=>url.endsWith('config.json')?structuredClone(config):{enabled}};
+async function initialize(hostname, sessionOK=true, origin='http://localhost:1314') {
+    const element = () => ({appendChild(){}});
+    const nodes=Object.fromEntries(['editor-message','editor-notice','editor-start'].map(id=>[id,element()]));
+    let initialized; const calls=[];
+    const context={location:{hostname,origin},document:{getElementById:id=>nodes[id],createElement:element},window:{CMS:{init:value=>initialized=value}},fetch:async url=>{
+        calls.push(url); return {ok:sessionOK,json:async()=>url.endsWith('config.json')?structuredClone(config):{authenticated:sessionOK}};
     }};
     await vm.runInNewContext(fs.readFileSync('static/admin/init.js','utf8'),context);
     return {nodes,initialized,calls};
 }
-test('local editing uses filesystem proxy and clearly reports local saves',async()=>{
+test('authenticated local editing uses only the same-origin protected API',async()=>{
     const result=await initialize('localhost');
-    assert.equal(result.initialized.config.backend.name,'git-gateway');
+    assert.equal(result.initialized.config.local_backend.url,'http://localhost:1314/api/v1');
     assert.match(result.nodes['editor-notice'].textContent,/LOCAL EDITOR/);
 });
-test('missing local proxy leaves actionable instructions',async()=>{
-    const result=await initialize('127.0.0.1',false,false);
+test('expired session cannot initialize editor',async()=>{
+    const result=await initialize('localhost',false);
     assert.equal(result.initialized,undefined);
-    assert.match(result.nodes['editor-message'].textContent,/npm run editor/);
+    assert.match(result.nodes['editor-message'].textContent,/expired/);
 });
-test('unconfigured production cannot start a misleading login flow',async()=>{
-    const result=await initialize('site.example');
-    assert.equal(result.initialized,undefined);
-    assert(!result.calls.some(url=>url.includes('8081')));
+test('public and ordinary Hugo pages cannot initialize a write backend',async()=>{
+    for(const [host,origin] of [['site.example','https://site.example'],['localhost','http://localhost:1313']]) {
+        const result=await initialize(host,true,origin);
+        assert.equal(result.initialized,undefined);
+        assert.equal(result.calls.length,0);
+    }
+    assert.equal(config.local_backend,false);
 });
-test('configured production never uses local filesystem access',async()=>{
-    const result=await initialize('site.example',true);
-    assert.equal(result.initialized.config.local_backend,false);
-    assert.equal(result.initialized.config.backend.name,'github');
-});
+
 test('all collection previews use the matching write-up styles and media assets',()=>{
     const previews={}; const styles=[];
     const CMS={registerPreviewStyle:style=>styles.push(style),registerPreviewTemplate:(name,view)=>previews[name]=view};

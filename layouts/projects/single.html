@@ -1,0 +1,29 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/about.css">
+<link rel="stylesheet" href="/css/project-detail.css">
+<article class="profile-page project-detail">
+    <a class="profile-link project-back" href="/about/#projects">&#8592; Back to projects</a>
+    <header class="project-header">
+        <p class="profile-kicker">PROJECT / {{ upper .Params.category }}</p>
+        <h1>{{ .Title }}<span>.</span></h1>
+        <p class="project-lead">{{ .Description }}</p>
+        <div class="project-facts">
+            {{ with .Params.status }}<span class="profile-project-status">{{ . }}</span>{{ end }}
+            <ul class="profile-tags" aria-label="Project areas and technologies">{{ range .Params.stack }}<li>{{ . }}</li>{{ end }}</ul>
+        </div>
+        <div class="profile-actions">
+            {{ with .Params.github }}<a class="profile-button" href="{{ . }}" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">&#8599;</span></a>
+            {{ else }}<span class="project-repository-pending">GitHub repository link coming soon</span>{{ end }}
+            <a class="profile-link" href="#work-done">Explore the work <span aria-hidden="true">&#8595;</span></a>
+        </div>
+    </header>
+    <div class="project-body">
+        <nav class="project-toc" aria-label="On this project page"><p class="profile-kicker">IN THIS PROJECT</p>{{ .TableOfContents }}</nav>
+        <div class="project-prose">{{ .Content }}</div>
+    </div>
+    <footer class="project-related">
+        <p class="profile-kicker">EXPLORE ANOTHER PROJECT</p>
+        <div>{{ range (where site.RegularPages "Section" "projects").ByWeight }}{{ if ne .RelPermalink $.RelPermalink }}<a class="profile-link" href="{{ .RelPermalink }}">{{ .Title }} <span aria-hidden="true">&#8594;</span></a>{{ end }}{{ end }}</div>
+    </footer>
+</article>
+{{ end }}

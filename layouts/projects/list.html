@@ -1,0 +1,9 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/about.css">
+<div class="profile-page">
+    <section class="profile-section" aria-labelledby="project-list-title">
+        <div class="profile-section-heading"><div><p class="profile-kicker">SELECTED PROJECTS</p><h1 id="project-list-title">Putting the ideas to work.</h1></div></div>
+        {{ partial "profile-project-list.html" . }}
+    </section>
+</div>
+{{ end }}

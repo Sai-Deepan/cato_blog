@@ -1,0 +1,15 @@
+<div class="profile-project-list">
+    {{ range (where site.RegularPages "Section" "projects").ByWeight }}
+    <article class="profile-project{{ if .Params.featured }} profile-project-feature{{ end }}" id="{{ .Params.anchor }}">
+        <span class="profile-project-number" aria-hidden="true">{{ printf "%02d" .Weight }} /</span>
+        <div>
+            <p class="profile-kicker">{{ upper .Params.category }}</p>
+            <h3><a class="profile-project-link" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+            <p>{{ .Description }}</p>
+            <ul class="profile-tags">{{ range .Params.stack }}<li>{{ . }}</li>{{ end }}</ul>
+            <span class="profile-project-read" aria-hidden="true">Explore project &#8599;</span>
+        </div>
+        {{ with .Params.status }}<span class="profile-project-status">{{ . }}</span>{{ end }}
+    </article>
+    {{ end }}
+</div>

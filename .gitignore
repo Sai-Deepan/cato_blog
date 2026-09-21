@@ -55,5 +55,6 @@ next-env.d.ts
 /resources/_gen/
 /node_modules/
 .hugo_build.lock
+/hugo_stats.json
 .vercel/
 .idea/
