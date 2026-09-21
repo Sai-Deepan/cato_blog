@@ -1,4 +1,5 @@
-<div class="profile-project-list">
+<div class="profile-project-controls" aria-label="Browse projects"><span>SCROLL THROUGH PROJECTS</span><div><button type="button" class="profile-project-prev" aria-label="Previous project" disabled>&uarr;</button><button type="button" class="profile-project-next" aria-label="Next project">&darr;</button></div></div>
+<div class="profile-project-list" id="profile-project-list" tabindex="0" aria-label="Projects, scroll to see more">
     {{ range (where site.RegularPages "Section" "projects").ByWeight }}
     <article class="profile-project{{ if .Params.featured }} profile-project-feature{{ end }}" id="{{ .Params.anchor }}">
         <span class="profile-project-number" aria-hidden="true">{{ printf "%02d" .Weight }} /</span>
