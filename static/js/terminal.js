@@ -2,7 +2,7 @@
     const terminal = document.querySelector('.terminal-window');
     const input = document.getElementById('terminal-input');
     const output = document.getElementById('terminal-output');
-    const consolePanel = document.getElementById('home-console');
+    const closeButton = terminal?.querySelector('.terminal-close');
     if (!terminal || !input || !output) return;
     const routes = { about: '/about/', projects: '/#home-projects', research: '/research/', articles: '/articles/', exploits: '/exploits/', blog: '/blog/', cves: '/cves/', contact: '/contact/' };
     const responses = {
@@ -10,18 +10,25 @@
         whoami: 'Deepan Sai / CatoTheYounger\nSecurity research ? systems engineering ? machine learning',
         resume: 'Visit About for my background and experience: /about/'
     };
+    let previousFocus;
+    function closeTerminal() {
+        terminal.classList.remove('active');
+        terminal.setAttribute('aria-hidden', 'true');
+        previousFocus?.focus();
+    }
+    closeButton?.addEventListener('click', closeTerminal);
     document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && consolePanel?.open) {
-            consolePanel.open = false;
-            consolePanel.querySelector('summary').focus();
+        if (event.key === 'Escape' && terminal.classList.contains('active')) {
+            closeTerminal();
             return;
         }
         const active = document.activeElement;
         if (active?.matches('input, textarea, select') || active?.isContentEditable || event.ctrlKey || event.metaKey || event.altKey) return;
-        if (event.key === '/') {
+        if (event.key === '\\') {
             event.preventDefault();
-            if (consolePanel) consolePanel.open = true;
+            previousFocus = active;
             terminal.classList.add('active');
+            terminal.setAttribute('aria-hidden', 'false');
             input.focus();
         }
     });

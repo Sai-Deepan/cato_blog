@@ -1,0 +1,22 @@
+{{ define "main" }}
+<link rel="stylesheet" href="/css/gallery.css">
+{{ $photos := slice }}
+{{ range readDir "static/images/gallery" }}
+    {{ if and (not .IsDir) (findRE `(?i)\.(jpe?g|png|webp|gif)$` .Name) }}
+        {{ $photos = $photos | append .Name }}
+    {{ end }}
+{{ end }}
+<div class="gallery-page">
+    <header class="gallery-header"><p class="gallery-kicker">DEEPAN SAI / MOMENTS</p><h1>Gallery.</h1><p>Photographs from along the way.</p></header>
+    {{ if $photos }}
+    <div class="gallery-grid">
+        {{ range $photos }}
+        {{ $caption := replaceRE `[-_]` " " (replaceRE `(?i)\.(jpe?g|png|webp|gif)$` "" .) | humanize }}
+        <figure><a href="{{ printf "/images/gallery/%s" . }}"><img src="{{ printf "/images/gallery/%s" . }}" alt="{{ $caption }}" loading="lazy"></a><figcaption>{{ $caption }}</figcaption></figure>
+        {{ end }}
+    </div>
+    {{ else }}
+    <p class="gallery-empty">Photos are coming soon.</p>
+    {{ end }}
+</div>
+{{ end }}
